@@ -14,12 +14,16 @@
     "es6": true
   },
   "rules": {
+    "indent": 0,
     "space-before-function-paren": "off",
     "react/prefer-stateless-function": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "linebreak-style": "off",
     "global-require": "off",
     "semi": "warn",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "comma-dangle": "off",
+    "eol-last": "off",
+    "react/jsx-indent": "off"
   }
 }
