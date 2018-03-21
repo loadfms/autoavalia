@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Top = () => {
+const Footer = () => {
   return (
     <h1>Footer</h1>
   );
 };
 
-export default Top;
+export default Footer;
