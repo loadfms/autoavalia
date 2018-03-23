@@ -9,7 +9,7 @@ using Webmotors.Shared.Database.NoSql;
 
 namespace AutoAvalia_API.Controllers
 {
-    public abstract class CrudApi<T, TKey> : Controller where T : IEntity<TKey>
+    public abstract class CrudApi<T, TKey> : ApiController where T : IEntity<TKey>
     {
         public List<T> Get()
         {
