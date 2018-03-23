@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace AutoAvalia_API
@@ -9,10 +10,11 @@ namespace AutoAvalia_API
 	{
 		public static void Register(HttpConfiguration config)
 		{
-			// Web API configuration and services
+            // Web API configuration and services
+		    config.Formatters.Add(new BrowserJsonFormatter());
 
-			// Web API routes
-			config.MapHttpAttributeRoutes();
+            // Web API routes
+            config.MapHttpAttributeRoutes();
 
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
