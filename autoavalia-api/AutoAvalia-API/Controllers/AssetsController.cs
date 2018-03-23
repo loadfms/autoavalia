@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Amazon;
+using Webmotors.Api.Classes;
 using Webmotors.Shared.IO;
 
 namespace Webmotors.Api.Controllers
@@ -13,9 +14,15 @@ namespace Webmotors.Api.Controllers
             Client = new AmazonFileUploadClient("", "");
         }
 
-        public void UploadImage()
+        public AssetUploadResult UploadImage(string bucket, string name)
         {
+            var stream = StreamHelper.Create("");
 
+            using (stream)
+            {
+                var response = Client.Upload(stream, bucket, name);
+                return new AssetUploadResult(response);
+            }
         }
     }
 }

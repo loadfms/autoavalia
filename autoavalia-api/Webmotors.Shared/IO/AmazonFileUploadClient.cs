@@ -21,13 +21,13 @@ namespace Webmotors.Shared.IO
         }
 
 
-        public Tuple<bool, string> Upload(Stream stream, string bucket, string key)
+        public Tuple<bool, string> Upload(Stream stream, string bucket, string name)
         {
             try
             {
                 using (stream)
                 {
-                    AmazonHelper.UploadFromStream(ApiKey, ApiSecret, stream, bucket, key);
+                    AmazonHelper.UploadFromStream(ApiKey, ApiSecret, stream, bucket, name);
                     return new Tuple<bool, string>(true, "Imagem enviada com sucesso");
                 }
             }

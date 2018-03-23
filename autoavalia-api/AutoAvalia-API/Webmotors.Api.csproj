@@ -176,6 +176,7 @@
     <Compile Include="Classes\Answer.cs" />
     <Compile Include="Classes\Cluster.cs" />
     <Compile Include="Classes\Question.cs" />
+    <Compile Include="Classes\AssetUploadResult.cs" />
     <Compile Include="Classes\VehicleAdvert.cs" />
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\AssetsController.cs" />
