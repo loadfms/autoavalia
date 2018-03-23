@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 using Webmotors.Shared.Database;
 using Webmotors.Shared.Database.NoSql;
 
@@ -23,14 +20,17 @@ namespace AutoAvalia_API.Controllers
 
         public void Post([FromBody]T value)
         {
+            new QuickRepository<T, TKey>().Add(value);
         }
 
         public void Put(TKey id, [FromBody]T value)
         {
+            new QuickRepository<T, TKey>().Update(value);
         }
 
         public void Delete(TKey id)
         {
+            new QuickRepository<T, TKey>().Delete(id);
         }
     }
 }
