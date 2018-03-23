@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace AutoAvalia_API
+namespace Webmotors.Api
 {
 	public class BundleConfig
 	{

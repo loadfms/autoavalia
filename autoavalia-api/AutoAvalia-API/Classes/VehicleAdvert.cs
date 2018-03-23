@@ -1,11 +1,8 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 using Webmotors.Shared.Database;
 
-namespace AutoAvalia_API.Classes
+namespace Webmotors.Api.Classes
 {
 	[BsonIgnoreExtraElements]
 	public class VehicleAdvert : IEntity<long>

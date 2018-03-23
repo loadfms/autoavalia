@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace AutoAvalia_API
+namespace Webmotors.Api
 {
 	public class FilterConfig
 	{

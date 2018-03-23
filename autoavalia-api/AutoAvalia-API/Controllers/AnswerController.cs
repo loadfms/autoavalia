@@ -1,6 +1,6 @@
-﻿using AutoAvalia_API.Classes;
+﻿using Webmotors.Api.Classes;
 
-namespace AutoAvalia_API.Controllers
+namespace Webmotors.Api.Controllers
 {
     public class AnswerController : CrudApi<Answer, string>
     {

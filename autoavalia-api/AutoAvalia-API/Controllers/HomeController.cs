@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace AutoAvalia_API.Controllers
+namespace Webmotors.Api.Controllers
 {
 	public class HomeController : Controller
 	{

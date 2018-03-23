@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoAvalia-API", "AutoAvalia-API\AutoAvalia-API.csproj", "{67D9D82B-474F-44B0-9F2E-BEBB2A3C9247}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webmotors.Api", "AutoAvalia-API\Webmotors.Api.csproj", "{67D9D82B-474F-44B0-9F2E-BEBB2A3C9247}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webmotors.Shared", "Webmotors.Shared\Webmotors.Shared.csproj", "{B8727D29-811B-4201-95C1-1D9B82CE02F1}"
 EndProject

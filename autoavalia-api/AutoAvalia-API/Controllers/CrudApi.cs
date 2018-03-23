@@ -4,7 +4,7 @@ using System.Web.Http;
 using Webmotors.Shared.Database;
 using Webmotors.Shared.Database.NoSql;
 
-namespace AutoAvalia_API.Controllers
+namespace Webmotors.Api.Controllers
 {
     public abstract class CrudApi<T, TKey> : ApiController where T : IEntity<TKey>
     {

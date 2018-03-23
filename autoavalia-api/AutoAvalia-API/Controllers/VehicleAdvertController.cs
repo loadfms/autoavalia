@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoAvalia_API.Classes;
+﻿using Webmotors.Api.Classes;
 
-namespace AutoAvalia_API.Controllers
+namespace Webmotors.Api.Controllers
 {
     public class VehicleAdvertController : CrudApi<VehicleAdvert, long>
     {

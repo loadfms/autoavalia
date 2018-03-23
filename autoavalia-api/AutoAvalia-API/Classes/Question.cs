@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Webmotors.Shared.Database;
+﻿using Webmotors.Shared.Database;
 
-namespace AutoAvalia_API.Classes
+namespace Webmotors.Api.Classes
 {
     public class Question : Entity
     {

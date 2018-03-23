@@ -3,7 +3,7 @@ using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
-namespace AutoAvalia_API
+namespace Webmotors.Api
 {
     public class BrowserJsonFormatter : JsonMediaTypeFormatter
     {
