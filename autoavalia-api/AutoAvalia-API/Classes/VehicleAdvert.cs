@@ -6,14 +6,14 @@ using Webmotors.Shared.Database;
 
 namespace AutoAvalia_API.Classes
 {
-    public class VehicleAdvert : IEntity<int>
+    public class VehicleAdvert : IEntity<long>
     {
-		public int Id { get; set; }
-		public Seller Selle { get; set; }
+        public Seller Selle { get; set; }
         public Prices Prices { get; set; }
         public string LongComment { get; set; }
         public Media Media { get; set; }
-	}
+        public long Id { get; set; }
+    }
 
     public class Seller
     {
