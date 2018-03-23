@@ -9,32 +9,32 @@ using MongoDB.Driver.Linq;
 
 namespace Webmotors.Shared.Database.NoSql
 {
-    public class MongoRepository<T, TKey> : IRepository<T, TKey>
+    public class QuickRepository<T, TKey> : IRepository<T, TKey>
         where T : IEntity<TKey>
     {
         protected internal MongoCollection<T> DbCollection;
 
-        public MongoRepository()
+        public QuickRepository()
             : this(MongoUtility<TKey>.GetDefaultConnectionString())
         {
         }
 
-        public MongoRepository(string connectionString)
+        public QuickRepository(string connectionString)
         {
             DbCollection = MongoUtility<TKey>.GetCollectionFromConnectionString<T>(connectionString);
         }
 
-        public MongoRepository(string connectionString, string collectionName)
+        public QuickRepository(string connectionString, string collectionName)
         {
             DbCollection = MongoUtility<TKey>.GetCollectionFromConnectionString<T>(connectionString, collectionName);
         }
 
-        public MongoRepository(MongoUrl url)
+        public QuickRepository(MongoUrl url)
         {
             DbCollection = MongoUtility<TKey>.GetCollectionFromUrl<T>(url);
         }
 
-        public MongoRepository(MongoUrl url, string collectionName)
+        public QuickRepository(MongoUrl url, string collectionName)
         {
             DbCollection = MongoUtility<TKey>.GetCollectionFromUrl<T>(url, collectionName);
         }
@@ -137,22 +137,22 @@ namespace Webmotors.Shared.Database.NoSql
         public virtual IQueryProvider Provider => DbCollection.AsQueryable().Provider;
     }
 
-    public class MongoRepository<T> : MongoRepository<T, string>, IRepository<T>
+    public class QuickRepository<T> : QuickRepository<T, string>, IRepository<T>
         where T : IEntity<string>
     {
-        public MongoRepository()
+        public QuickRepository()
         { }
 
-        public MongoRepository(MongoUrl url)
+        public QuickRepository(MongoUrl url)
             : base(url) { }
 
-        public MongoRepository(MongoUrl url, string collectionName)
+        public QuickRepository(MongoUrl url, string collectionName)
             : base(url, collectionName) { }
 
-        public MongoRepository(string connectionString)
+        public QuickRepository(string connectionString)
             : base(connectionString) { }
 
-        public MongoRepository(string connectionString, string collectionName)
+        public QuickRepository(string connectionString, string collectionName)
             : base(connectionString, collectionName) { }
     }
 }

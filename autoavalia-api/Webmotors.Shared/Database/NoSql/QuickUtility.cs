@@ -4,7 +4,7 @@ using System.Configuration;
 
 namespace Webmotors.Shared.Database.NoSql
 {
-    internal static class MongoUtility<TU>
+    internal static class QuickUtility<TU>
     {
         private const string DefaultConnectionstringName = "MongoServerSettings";
 

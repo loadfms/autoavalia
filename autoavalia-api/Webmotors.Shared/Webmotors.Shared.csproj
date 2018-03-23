@@ -71,7 +71,7 @@
     <Compile Include="Database\NoSql\CollectionName.cs" />
     <Compile Include="Database\NoSql\IRepositoryManager.cs" />
     <Compile Include="Database\NoSql\MongoRepositoryManager.cs" />
-    <Compile Include="Database\NoSql\Repository.cs" />
+    <Compile Include="Database\NoSql\QuickRepository.cs" />
     <Compile Include="Database\NoSql\MongoUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
