@@ -9,5 +9,6 @@ namespace AutoAvalia_API.Classes
     {
         public int User { get; set; }
         public bool Value { get; set; }
+        public string Photo { get; set; }
     }
 }

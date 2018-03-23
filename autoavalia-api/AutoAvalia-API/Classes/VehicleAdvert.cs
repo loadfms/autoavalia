@@ -37,6 +37,11 @@ namespace AutoAvalia_API.Classes
     {
         public string PhotoPath { get; set; }
         public int Order { get; set; }
+    }
+
+    public class Specification
+    {
+        public string Title { get; set; }
         public Make Make { get; set; }
         public Model Model { get; set; }
         public Version Version { get; set; }
@@ -48,11 +53,7 @@ namespace AutoAvalia_API.Classes
         public string Transmition { get; set; }
         public string Fuel { get; set; }
         public string Plate { get; set; }
-    }
-
-    public class Specification
-    {
-        public string Title { get; set; }
+        public ReplacementParts ReplacementParts { get; set; }
     }
 
     public class Make
@@ -73,5 +74,18 @@ namespace AutoAvalia_API.Classes
     public class Color
     {
         public string Primary { get; set; }
+    }
+
+    public class ReplacementParts
+    {
+        public string Token { get; set; }
+        public List<Part> Parts { get; set; }
+    }
+
+    public class Part
+    {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public decimal Value { get; set; }
     }
 }
