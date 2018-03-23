@@ -10,11 +10,11 @@ namespace AutoAvalia_API.Classes
 	[BsonIgnoreExtraElements]
 	public class VehicleAdvert : IEntity<long>
     {
+        public long Id { get; set; }
         public Seller Seller { get; set; }
-        public Prices Prices { get; set; }
+		public Prices Prices { get; set; }
         public string LongComment { get; set; }
         public Media Media { get; set; }
-        public long Id { get; set; }
     }
 
 	[BsonIgnoreExtraElements]
