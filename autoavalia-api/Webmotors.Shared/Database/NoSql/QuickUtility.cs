@@ -6,7 +6,7 @@ namespace Webmotors.Shared.Database.NoSql
 {
     internal static class QuickUtility<TU>
     {
-        private const string DefaultConnectionstringName = "MongoServerSettings";
+        private const string DefaultConnectionstringName = "MongoDbConnectionString";
 
         public static string GetDefaultConnectionString()
         {
@@ -17,7 +17,7 @@ namespace Webmotors.Shared.Database.NoSql
         {
             var client = new MongoClient(url);
             var server = client.GetServer();
-            return server.GetDatabase(url.DatabaseName); // WriteConcern defaulted to Acknowledged
+            return server.GetDatabase(url.DatabaseName);
         }
 
              public static MongoCollection<T> GetCollectionFromConnectionString<T>(string connectionString)
@@ -48,30 +48,18 @@ namespace Webmotors.Shared.Database.NoSql
 
         private static string GetCollectionName<T>() where T : IEntity<TU>
         {
-            string collectionName;
-            collectionName = typeof(T).BaseType == typeof(object) ? GetCollectioNameFromInterface<T>() : GetCollectionNameFromType(typeof(T));
+            var collectionName = typeof(T).BaseType == typeof(object) ? GetCollectioNameFromInterface<T>() : GetCollectionNameFromType(typeof(T));
 
             if (string.IsNullOrEmpty(collectionName))
-            {
                 throw new ArgumentException("Collection name cannot be empty for this entity");
-            }
+
             return collectionName;
         }
 
         private static string GetCollectioNameFromInterface<T>()
         {
-            string collectionname;
-
             var att = Attribute.GetCustomAttribute(typeof(T), typeof(CollectionName));
-            if (att != null)
-            {
-                collectionname = ((CollectionName)att).Name;
-            }
-            else
-            {
-                collectionname = typeof(T).Name;
-            }
-
+            var collectionname = att != null ? ((CollectionName)att).Name : typeof(T).Name;
             return collectionname;
         }
 
@@ -88,9 +76,9 @@ namespace Webmotors.Shared.Database.NoSql
             {
                 if (typeof(Entity).IsAssignableFrom(entitytype))
                 {
-                    while (!entitytype.BaseType.Equals(typeof(Entity)))
+                    while (entitytype?.BaseType != typeof(Entity))
                     {
-                        entitytype = entitytype.BaseType;
+                        entitytype = entitytype?.BaseType;
                     }
                 }
                 collectionname = entitytype.Name;

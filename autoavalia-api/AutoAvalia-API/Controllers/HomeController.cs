@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using AutoAvalia_API.Classes;
-using Webmotors.Shared.Database.NoSql;
+﻿using System.Web.Mvc;
 
 namespace AutoAvalia_API.Controllers
 {
@@ -15,9 +9,6 @@ namespace AutoAvalia_API.Controllers
 			ViewBag.Title = "Home Page";
 
 			return View();
-
-
-		    var repo = new QuickRepository<Question>();
         }
 	}
 }
