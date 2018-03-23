@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace Webmotors.Shared.Database
 {
-    public interface IRepository<T, TKey> : IQueryable<T>
+    public interface IRepository<T, in TKey> : IQueryable<T>
         where T : IEntity<TKey>
     {
         MongoCollection<T> Collection { get; }
@@ -23,7 +23,7 @@ namespace Webmotors.Shared.Database
         bool Exists(Expression<Func<T, bool>> predicate);
     }
 
-    public interface IRepository<T> : IQueryable<T>, IRepository<T, string>
+    public interface IRepository<T> : IRepository<T, string>
         where T : IEntity<string>
     {
 

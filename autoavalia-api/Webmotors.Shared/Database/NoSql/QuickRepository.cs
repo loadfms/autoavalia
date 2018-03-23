@@ -15,28 +15,28 @@ namespace Webmotors.Shared.Database.NoSql
         protected internal MongoCollection<T> DbCollection;
 
         public QuickRepository()
-            : this(MongoUtility<TKey>.GetDefaultConnectionString())
+            : this(QuickUtility<TKey>.GetDefaultConnectionString())
         {
         }
 
         public QuickRepository(string connectionString)
         {
-            DbCollection = MongoUtility<TKey>.GetCollectionFromConnectionString<T>(connectionString);
+            DbCollection = QuickUtility<TKey>.GetCollectionFromConnectionString<T>(connectionString);
         }
 
         public QuickRepository(string connectionString, string collectionName)
         {
-            DbCollection = MongoUtility<TKey>.GetCollectionFromConnectionString<T>(connectionString, collectionName);
+            DbCollection = QuickUtility<TKey>.GetCollectionFromConnectionString<T>(connectionString, collectionName);
         }
 
         public QuickRepository(MongoUrl url)
         {
-            DbCollection = MongoUtility<TKey>.GetCollectionFromUrl<T>(url);
+            DbCollection = QuickUtility<TKey>.GetCollectionFromUrl<T>(url);
         }
 
         public QuickRepository(MongoUrl url, string collectionName)
         {
-            DbCollection = MongoUtility<TKey>.GetCollectionFromUrl<T>(url, collectionName);
+            DbCollection = QuickUtility<TKey>.GetCollectionFromUrl<T>(url, collectionName);
         }
 
         public MongoCollection<T> Collection => DbCollection;

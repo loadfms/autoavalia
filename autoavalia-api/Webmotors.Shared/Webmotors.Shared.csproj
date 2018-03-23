@@ -70,9 +70,9 @@
     <Compile Include="Database\IRepository.cs" />
     <Compile Include="Database\NoSql\CollectionName.cs" />
     <Compile Include="Database\NoSql\IRepositoryManager.cs" />
-    <Compile Include="Database\NoSql\MongoRepositoryManager.cs" />
+    <Compile Include="Database\NoSql\QuickRepositoryManager.cs" />
     <Compile Include="Database\NoSql\QuickRepository.cs" />
-    <Compile Include="Database\NoSql\MongoUtility.cs" />
+    <Compile Include="Database\NoSql\QuickUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
