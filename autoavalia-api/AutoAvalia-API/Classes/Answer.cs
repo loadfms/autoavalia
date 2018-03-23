@@ -1,6 +1,6 @@
 ﻿using Webmotors.Shared.Database;
 
-namespace AutoAvalia_API.Classes
+namespace Webmotors.Api.Classes
 {
     public class Answer : Entity
     {

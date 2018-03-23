@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using MongoDB.Bson.Serialization.Attributes;
 using Webmotors.Shared.Database;
 
-namespace AutoAvalia_API.Classes
+namespace Webmotors.Api.Classes
 {
-    public class VehicleAdvert : IEntity<long>
+	[BsonIgnoreExtraElements]
+	public class VehicleAdvert : IEntity<long>
     {
-        public Seller Selle { get; set; }
-        public Prices Prices { get; set; }
+        public long Id { get; set; }
+        public Seller Seller { get; set; }
+		public Prices Prices { get; set; }
         public string LongComment { get; set; }
         public Media Media { get; set; }
-        public long Id { get; set; }
     }
 
-    public class Seller
-    {
-        public string FirstName { get; set; }
+	[BsonIgnoreExtraElements]
+	public class Seller : IEntity<long>
+	{
+		public long Id { get; set; }
+		public string FirstName { get; set; }
         public string FullName { get; set; }
         public string EmailAddress { get; set; }
         public string City { get; set; }

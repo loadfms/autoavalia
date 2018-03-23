@@ -2,7 +2,7 @@
 
 namespace Webmotors.Shared.Database
 {
-    public interface IEntity<TKey>
+	public interface IEntity<TKey>
     {
         [BsonId]
         TKey Id { get; set; }
