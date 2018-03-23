@@ -151,6 +151,7 @@
     <Compile Include="Classes\Answer.cs" />
     <Compile Include="Classes\Cluster.cs" />
     <Compile Include="Classes\Question.cs" />
+    <Compile Include="Classes\VehicleAdvert.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
