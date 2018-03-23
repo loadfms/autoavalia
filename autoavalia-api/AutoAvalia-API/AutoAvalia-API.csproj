@@ -129,7 +129,12 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Shared\Webmotors.Shared.csproj">
+      <Project>{b8727d29-811b-4201-95c1-1d9b82ce02f1}</Project>
+      <Name>Webmotors.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
