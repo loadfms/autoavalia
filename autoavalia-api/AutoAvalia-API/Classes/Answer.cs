@@ -2,8 +2,9 @@
 {
     public class Answer
     {
-        public int User { get; set; }
-        public bool Value { get; set; }
+        public int UserId { get; set; }
+		public int AdvertiseId { get; set; }
+		public int PartId { get; set; }
         public string Photo { get; set; }
     }
 }
