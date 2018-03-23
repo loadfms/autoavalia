@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Webmotors.Shared.Database;
 
 namespace AutoAvalia_API.Classes
 {
-    public class VehicleAdvert
+    public class VehicleAdvert : IEntity<int>
     {
-        public Seller Selle { get; set; }
+		public int Id { get; set; }
+		public Seller Selle { get; set; }
         public Prices Prices { get; set; }
         public string LongComment { get; set; }
         public Media Media { get; set; }
-    }
+	}
 
     public class Seller
     {
