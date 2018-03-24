@@ -3,7 +3,8 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Progress from '../Progress';
 import Storage from './../../helpers/storage'
-import {fetchQuestion, fetchAnswer} from './../../actions/index';
+import { fetchQuestion, fetchAnswer } from './../../actions/index';
+import {withRouter} from 'react-router-dom';
 
 export default class Question extends Component {
 	constructor(props) {
@@ -20,34 +21,46 @@ export default class Question extends Component {
 		this.setValue = this.setValue.bind(this);
 	}
 
-	setValue(e){
-		this.setState({value: e.target.dataset.value}, () =>{
-			if (this.state.value){
+	setValue(e) {
+		this.setState({ value: e.target.dataset.value, photo: 'teste' }, () => {
+			console.log(this.state.value);
+			if (this.state.value == "yes") {
+				alert('posta a porra da foto!')
+			} else {
+				console.log(1);
 				this.answerQuestion();
 			}
 		});
 	}
 
-	answerQuestion(){
+	answerQuestion() {
 		let _model = {
-			questionaryId: this.props.match.params.questionary,
-			questionId: this.props.match.params.id,
-			value: this.state.value,
-			photo: this.state.photo
+			QuestionnaireId: this.props.match.params.questionary,
+			QuestionId: this.state.currentQuestion.Id,
+			Value: this.state.value,
+			Photo: this.state.photo
 		}
+		console.log(_model);
 
-		fetchAnswer(_model, (response) =>{
-			console.log(response);
+		fetchAnswer(_model, (response) => {
+			this.getCurrentQuestion();
 		});
 	}
 
-
 	componentWillMount() {
+		this.getCurrentQuestion();
+	}
+
+	getCurrentQuestion() {
 		let _this = this;
 		fetchQuestion(this.props.match.params.questionary, this.props.match.params.id, (response) => {
-			_this.setState({
-				currentQuestion: response.data
-			});
+			if (response.data == null) {
+		this.props.history.push('/painel');
+			} else {
+				_this.setState({
+					currentQuestion: response.data
+				});
+			}
 		});
 	}
 
@@ -73,8 +86,8 @@ export default class Question extends Component {
 							<div className="container">
 								<div className="answer">
 									<div className="buttons">
-										<button className="button button--choose" data-value={true} onClick={this.setValue}>Sim</button>
-										<button className="button button--choose" data-value={false} onClick={this.setValue}>Não</button>
+										<button className="button button--choose" data-value={"yes"} onClick={this.setValue}>Sim</button>
+										<button className="button button--choose" data-value={"no"} onClick={this.setValue}>Não</button>
 									</div>
 								</div>
 							</div>
