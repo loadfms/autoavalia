@@ -11,7 +11,6 @@ namespace Webmotors.Api.Controllers
     {
 
         [HttpGet]
-        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         [Route("api/Question/{questionnaireId}/{clusterId}")]
         public Question ListQuestionByCluster(string questionnaireId, string clusterId)
         {

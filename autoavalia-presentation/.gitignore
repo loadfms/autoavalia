@@ -55,3 +55,4 @@ npm-debug.log
 # coverage
 
 /coverage
+/dist
