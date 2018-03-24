@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.Decodificador" />
+  <xs:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" />
+  <xs:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.Recall" />
+  <xs:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.DebitosRestricoesSP" />
+  <xs:element name="DecodificarChassiPrecificadores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Chassi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DecodificarChassiPrecificadoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Correct.Model.Decodificador" minOccurs="0" name="DecodificarChassiPrecificadoresResult" nillable="true" type="q1:DtoVeiculoDecodificado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Agregados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="AgregadosResult" nillable="true" type="q2:DtoAgregados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebitosRestricoes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UfPlaca" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebitosRestricoesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="DebitosRestricoesResult" nillable="true" type="q3:DtoDebitosRestricoes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HistRouboFurto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HistRouboFurtoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="HistRouboFurtoResult" nillable="true" type="q4:DtoHistoricoRouboFurto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gravame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Chassi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gravameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="gravameResult" nillable="true" type="q5:DtoGravame" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProprietariosAnteriores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProprietariosAnterioresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="ProprietariosAnterioresResult" nillable="true" type="q6:DtoProprietariosAnteriores" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Renajud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenajudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="RenajudResult" nillable="true" type="q7:DtoRenajud" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IndSinPerTot">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IndSinPerTotResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="IndSinPerTotResult" nillable="true" type="q8:DtoIndSinPerTot" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Leilao">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Chassi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeilaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="LeilaoResult" nillable="true" type="q9:DtoLeilao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Leilao2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Chassi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Leilao2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="Leilao2Result" nillable="true" type="q10:DtoLeilao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Leilao3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Chassi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Leilao3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="Leilao3Result" nillable="true" type="q11:DtoLeilao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Nacional">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Chave" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NacionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" minOccurs="0" name="NacionalResult" nillable="true" type="q12:DtoBinNacional" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Recall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="chassi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Correct.Model.Recall" minOccurs="0" name="RecallResult" nillable="true" type="q13:DtoRecall" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebitosRestricoesSP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="placa" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DebitosRestricoesSPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Correct.Model.DebitosRestricoesSP" minOccurs="0" name="DebitosRestricoesSPResult" nillable="true" type="q14:DebitosRestricoesSP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

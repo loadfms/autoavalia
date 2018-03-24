@@ -42,7 +42,8 @@ namespace Webmotors.Api.Controllers
                                 var question = clusterQuestions.First(z => y.QuestionId == z.Id);
                                 return new ReportAnswer {
                                     Name = question.Name,
-                                    Price = question.Price
+                                    Price = question.Price,
+                                    Photo = y.Photo
                                 };
                             }).ToList()
                         };

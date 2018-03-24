@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DtoAgregados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_DE_FABRICACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAIXA_DE_CAMBIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPACIDADE_DE_CARGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CILINDRADA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CMT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DO_ORGAO_SRF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_ATUALIZACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_EMPLACAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_LIMITE_RESTRICAO_TRIBUTARIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_REGISTRO_DI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESPECIE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MARCA_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DA_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DE_EIXOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_EIXO_AUXILIAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_EIXO_TRASEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_DO_FATURADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_DO_IMPORTADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_PROP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_PROCESSO_IMPORTACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_REDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PBT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POTENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCEDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUANTIDADE_DE_PASSAGEIROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESTRICOES" nillable="true" type="tns:ArrayOfDtoAgregadosRestricoes" />
+      <xs:element minOccurs="0" name="SEGMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO_DO_CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_SEGMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DE_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DE_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_DO_FATURADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_DO_IMPORTADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_MONTAGEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_OPERACAO_IMPORTACAO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_DA_PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_DESTINO_DE_FATURAMENTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoAgregados" nillable="true" type="tns:DtoAgregados" />
+  <xs:complexType name="ArrayOfDtoAgregadosRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoAgregadosRestricoes" nillable="true" type="tns:DtoAgregadosRestricoes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoAgregadosRestricoes" nillable="true" type="tns:ArrayOfDtoAgregadosRestricoes" />
+  <xs:complexType name="DtoAgregadosRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MENSAGEM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoAgregadosRestricoes" nillable="true" type="tns:DtoAgregadosRestricoes" />
+  <xs:complexType name="DtoDebitosRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_DE_FABRICACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAIXA_DE_CAMBIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPACIDADE_DE_CARGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATEGORIA_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CILINDRADA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CMT_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DO_ORGAO_SRF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COR_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_ATUALIZACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_EMPLACAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_LIMITE_RESTRICAO_TRIBUTARIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_REGISTRO_DI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESPECIE_DE_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_ERRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INFORMACOES_AVULSAS" nillable="true" type="tns:ArrayOfDtoInformacoesAvulsas" />
+      <xs:element minOccurs="0" name="MARCA_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSG_ERRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DA_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DE_EIXOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_EIXO_AUXILIAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_EIXO_TRASEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_DO_FATURADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_DO_IMPORTADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_PROCESSO_IMPORTACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_REDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PBT_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POTENCIA_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCEDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUANTIDADE_DE_PASSAGEIROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESTRICOES" nillable="true" type="tns:DtoMsgRestricoes" />
+      <xs:element minOccurs="0" name="SITUACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO_DO_CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DE_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DE_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_DO_FATURADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_DO_IMPORTADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_MONTAGEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_OPERACAO_IMPORTACAO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_DESTINO_DE_FATURAMENTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebitosRestricoes" nillable="true" type="tns:DtoDebitosRestricoes" />
+  <xs:complexType name="ArrayOfDtoInformacoesAvulsas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoInformacoesAvulsas" nillable="true" type="tns:DtoInformacoesAvulsas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoInformacoesAvulsas" nillable="true" type="tns:ArrayOfDtoInformacoesAvulsas" />
+  <xs:complexType name="DtoInformacoesAvulsas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRICAO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoInformacoesAvulsas" nillable="true" type="tns:DtoInformacoesAvulsas" />
+  <xs:complexType name="DtoMsgRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DPVAT" nillable="true" type="tns:DtoDebResNacDPVAT" />
+      <xs:element minOccurs="0" name="EXISTE_RESTRICAO_FINANCIAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_RESTRICAO_RENAJUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_RETRICAO_GERAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_ROUBO_FURTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINANCIAMENTO" nillable="true" type="tns:DtoDebResNacFinanciamento" />
+      <xs:element minOccurs="0" name="IPVA" nillable="true" type="tns:DtoDebResNacIPVA" />
+      <xs:element minOccurs="0" name="LICENCIAMENTO" nillable="true" type="tns:DtoDebResNacLCC" />
+      <xs:element minOccurs="0" name="MENSAGEM" nillable="true" type="tns:ArrayOfDtoDebResNacMSG" />
+      <xs:element minOccurs="0" name="MULTAS" nillable="true" type="tns:DtoDebResNacMultas" />
+      <xs:element minOccurs="0" name="VEICULO_BAIXADO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoMsgRestricoes" nillable="true" type="tns:DtoMsgRestricoes" />
+  <xs:complexType name="DtoDebResNacDPVAT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXISTE_PENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBSERVACOES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALOR_PENDENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebResNacDPVAT" nillable="true" type="tns:DtoDebResNacDPVAT" />
+  <xs:complexType name="DtoDebResNacFinanciamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CGC_FINANCEIRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_AGENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_INCLUSAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_VIGENCIA_CONTRATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_AGENTE_FINANCEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_FINANCIADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_CONTRATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_RESTRICAO_FINANCIAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_TRANSACAO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebResNacFinanciamento" nillable="true" type="tns:DtoDebResNacFinanciamento" />
+  <xs:complexType name="DtoDebResNacIPVA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXISTE_PENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBSERVACOES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALOR_PENDENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebResNacIPVA" nillable="true" type="tns:DtoDebResNacIPVA" />
+  <xs:complexType name="DtoDebResNacLCC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXISTE_PENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBSERVACOES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALOR_PENDENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebResNacLCC" nillable="true" type="tns:DtoDebResNacLCC" />
+  <xs:complexType name="ArrayOfDtoDebResNacMSG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoDebResNacMSG" nillable="true" type="tns:DtoDebResNacMSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoDebResNacMSG" nillable="true" type="tns:ArrayOfDtoDebResNacMSG" />
+  <xs:complexType name="DtoDebResNacMSG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MENSAGEM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebResNacMSG" nillable="true" type="tns:DtoDebResNacMSG" />
+  <xs:complexType name="DtoDebResNacMultas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXISTE_PENDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBSERVACOES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALOR_PENDENCIA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDebResNacMultas" nillable="true" type="tns:DtoDebResNacMultas" />
+  <xs:complexType name="DtoHistoricoRouboFurto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="INDICADOR" nillable="true" type="tns:DtoHistRouboFurtoInd" />
+      <xs:element minOccurs="0" name="OCORRENCIAS" nillable="true" type="tns:ArrayOfDtoHistRouboFurtoOCorr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoHistoricoRouboFurto" nillable="true" type="tns:DtoHistoricoRouboFurto" />
+  <xs:complexType name="DtoHistRouboFurtoInd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HOUVE_DECLARACAO_DE_ROUBO_FURTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HOUVE_DEVOLUCAO_DE_ROUBO_FURTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HOUVE_RECUPERACAO_DE_ROUBO_FURTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoHistRouboFurtoInd" nillable="true" type="tns:DtoHistRouboFurtoInd" />
+  <xs:complexType name="ArrayOfDtoHistRouboFurtoOCorr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoHistRouboFurtoOCorr" nillable="true" type="tns:DtoHistRouboFurtoOCorr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoHistRouboFurtoOCorr" nillable="true" type="tns:ArrayOfDtoHistRouboFurtoOCorr" />
+  <xs:complexType name="DtoHistRouboFurtoOCorr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_BOLETIM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_FABRICACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BOLETIM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CGC_AGENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIDADE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_ORGAO_SEGURANCA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_OCORRENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DDD_TELEFONE_CONTATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDENTIDADE_INFORMANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INDICADOR_PROCEDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MARCA_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MUNICIPIO_EMPLACAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_INFORMANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RAMAL_TELEFONE_CONTATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TELEFONE_CONTATO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DECLARACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOC_INFORMANTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_OCORRENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_OCORRENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_PLACA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoHistRouboFurtoOCorr" nillable="true" type="tns:DtoHistRouboFurtoOCorr" />
+  <xs:complexType name="DtoGravame">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_GRAVAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GRAVAMES" nillable="true" type="tns:ArrayOfDtoGravames" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoGravame" nillable="true" type="tns:DtoGravame" />
+  <xs:complexType name="ArrayOfDtoGravames">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoGravames" nillable="true" type="tns:DtoGravames" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoGravames" nillable="true" type="tns:ArrayOfDtoGravames" />
+  <xs:complexType name="DtoGravames">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CGC_AGENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPF_CGC_FINANCIADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_INCLUSAO_GRAVAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_AGENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_FINANCIADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARCACAO_CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_LICENCIAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_PLACA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoGravames" nillable="true" type="tns:DtoGravames" />
+  <xs:complexType name="DtoProprietariosAnteriores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PROPRIETARIO" nillable="true" type="tns:ArrayOfDtoProprAnter" />
+      <xs:element minOccurs="0" name="QT_PROPRIETARIO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoProprietariosAnteriores" nillable="true" type="tns:DtoProprietariosAnteriores" />
+  <xs:complexType name="ArrayOfDtoProprAnter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoProprAnter" nillable="true" type="tns:DtoProprAnter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoProprAnter" nillable="true" type="tns:ArrayOfDtoProprAnter" />
+  <xs:complexType name="DtoProprAnter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_EXERCICIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CGC_CPF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_EMISSAO_GUIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_PROCESSAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID_PAG_DUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_BANCO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SALDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_DUT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoProprAnter" nillable="true" type="tns:DtoProprAnter" />
+  <xs:complexType name="DtoRenajud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DETALHES" nillable="true" type="tns:DtoRenajudDETALHES" />
+      <xs:element minOccurs="0" name="EXISTE_ERRO" type="xs:byte" />
+      <xs:element minOccurs="0" name="EXISTE_RENAJUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSG_ERRO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoRenajud" nillable="true" type="tns:DtoRenajud" />
+  <xs:complexType name="DtoRenajudDETALHES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_DE_FABRICACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CPF_CNPJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MARCA_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NOME_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGAO_JUDICIARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESSO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESTRICOES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRIBUNAL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoRenajudDETALHES" nillable="true" type="tns:DtoRenajudDETALHES" />
+  <xs:complexType name="DtoIndSinPerTot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_INCLUSAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_ERRO" type="xs:byte" />
+      <xs:element minOccurs="0" name="EXISTE_PT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MENSAGEM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoIndSinPerTot" nillable="true" type="tns:DtoIndSinPerTot" />
+  <xs:complexType name="DtoLeilao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXISTE_ERRO" type="xs:byte" />
+      <xs:element minOccurs="0" name="EXISTE_LEILAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INFO_LEILAO" nillable="true" type="tns:ArrayOfDtoInfoLeilao" />
+      <xs:element minOccurs="0" name="MSG_ERRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARKETING" nillable="true" type="tns:DtoREMARKETING" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoLeilao" nillable="true" type="tns:DtoLeilao" />
+  <xs:complexType name="ArrayOfDtoInfoLeilao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoInfoLeilao" nillable="true" type="tns:DtoInfoLeilao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoInfoLeilao" nillable="true" type="tns:ArrayOfDtoInfoLeilao" />
+  <xs:complexType name="DtoInfoLeilao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_FABRICACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAMBIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATEGORIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMITENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONDICAO_GERAL_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_LEILAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EIXO_TRASEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMAGENS" nillable="true" type="tns:ArrayOfDtoImagens" />
+      <xs:element minOccurs="0" name="IMPORTADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KILOMETRAGEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LEILOEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MARCA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PATIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QTD_EIXOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO_CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoInfoLeilao" nillable="true" type="tns:DtoInfoLeilao" />
+  <xs:complexType name="ArrayOfDtoImagens">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoImagens" nillable="true" type="tns:DtoImagens" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoImagens" nillable="true" type="tns:ArrayOfDtoImagens" />
+  <xs:complexType name="DtoImagens">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IMAGEM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoImagens" nillable="true" type="tns:DtoImagens" />
+  <xs:complexType name="DtoREMARKETING">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACEITA_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BANCOS_DIANTEIROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BANCOS_TRASEIROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CACAMBA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARENAGEM_DIANTEIRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARENAGEM_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CARENAGEM_ESQUERDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DADOS_VEICULO" nillable="true" type="tns:DtoDadosVeiculo" />
+      <xs:element minOccurs="0" name="DATA_INSPECA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXIGENCIA_VISTORIA_ESPECIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_ERRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_RA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORRO_TETO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FRENTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FRENTE_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FRENTE_ESQUERDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GARANTIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LADO_DIREITO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LADO_ESQUERDO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LINK1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LINK2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LISTA_FOTOS" nillable="true" type="tns:ArrayOfDtoListaFotos" />
+      <xs:element minOccurs="0" name="LISTA_LEILOES" nillable="true" type="tns:ArrayOfDtoListaLeiloes" />
+      <xs:element minOccurs="0" name="MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERCENTUAL_SOBRE_REF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PNEU_FRENTE_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PNEU_FRENTE_ESQUERDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PNEU_TRASEIRA_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PNEU_TRASEIRA_ESQUERDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PONTUACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORTAMALAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORTA_FRENTE_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORTA_FRENTE_ESQUERDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORTA_TRASEIRA_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PORTA_TRASEIRA_ESQUERDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TANQUE_COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TETO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRASEIRA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRASEIRA_DIREITA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TRASEIRA_ESQUERDA" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoREMARKETING" nillable="true" type="tns:DtoREMARKETING" />
+  <xs:complexType name="DtoDadosVeiculo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_FAB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CATEGORIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MARCA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NR_CAMBIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NR_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NR_EIXO_TRASEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NR_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QTD_EIXOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO_CHASSI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoDadosVeiculo" nillable="true" type="tns:DtoDadosVeiculo" />
+  <xs:complexType name="ArrayOfDtoListaFotos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoListaFotos" nillable="true" type="tns:DtoListaFotos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoListaFotos" nillable="true" type="tns:ArrayOfDtoListaFotos" />
+  <xs:complexType name="DtoListaFotos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="link" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoListaFotos" nillable="true" type="tns:DtoListaFotos" />
+  <xs:complexType name="ArrayOfDtoListaLeiloes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoListaLeiloes" nillable="true" type="tns:DtoListaLeiloes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoListaLeiloes" nillable="true" type="tns:ArrayOfDtoListaLeiloes" />
+  <xs:complexType name="DtoListaLeiloes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COND_CAMBIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COND_MECANICA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COND_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COND_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_LEILAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OBS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGANIZADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO_CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VENDEDOR" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoListaLeiloes" nillable="true" type="tns:DtoListaLeiloes" />
+  <xs:complexType name="DtoBinNacional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANO_DE_FABRICACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANO_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAIXA_DE_CAMBIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAPACIDADE_DE_CARGA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CILINDRADA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CMT_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODIGO_DO_ORGAO_SRF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMBUSTIVEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COR_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_ATUALIZACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_EMPLACAMENTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_LIMITE_RESTRICAO_TRIBUTARIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATA_REGISTRO_DI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ESPECIE_DE_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_ERRO" type="xs:byte" />
+      <xs:element minOccurs="0" name="INFORMACOESAVUSAS" nillable="true" type="tns:ArrayOfDtoInformacoesAvulsas" />
+      <xs:element minOccurs="0" name="MARCA_MODELO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MSG_ERRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MUNICIPIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DA_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DE_EIXOS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_EIXO_AUXILIAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_EIXO_TRASEIRO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_DO_MOTOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_DO_FATURADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_DO_IMPORTADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_IDENTIFICACAO_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_PROCESSO_IMPORTACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NUMERO_REDA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PBT_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POTENCIA_DO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCEDENCIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUANTIDADE_DE_PASSAGEIROS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RENAVAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESTRICOES" nillable="true" type="tns:DtoRestricoes" />
+      <xs:element minOccurs="0" name="SITUACAO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITUACAO_DO_CHASSI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DE_CARROCERIA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DE_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_DO_FATURADO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_DO_IMPORTADOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_DOCUMENTO_PROPRIETARIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_MONTAGEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIPO_OPERACAO_IMPORTACAO_VEICULO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_DA_PLACA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UF_DESTINO_DE_FATURAMENTO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoBinNacional" nillable="true" type="tns:DtoBinNacional" />
+  <xs:complexType name="DtoRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DETALHE_RENAJUD" nillable="true" type="tns:DtoRenajud" />
+      <xs:element minOccurs="0" name="EXISTE_RESTRICAO_GERAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_RESTRICAO_RENAJUD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXISTE_RESTRICAO_ROUBO_FURTO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MENSAGENS_RESTRICOES" nillable="true" type="tns:ArrayOfDtoMensagemRestricoes" />
+      <xs:element minOccurs="0" name="VEICULO_BAIXADO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoRestricoes" nillable="true" type="tns:DtoRestricoes" />
+  <xs:complexType name="ArrayOfDtoMensagemRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoMensagemRestricoes" nillable="true" type="tns:DtoMensagemRestricoes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoMensagemRestricoes" nillable="true" type="tns:ArrayOfDtoMensagemRestricoes" />
+  <xs:complexType name="DtoMensagemRestricoes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MENSAGEM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoMensagemRestricoes" nillable="true" type="tns:DtoMensagemRestricoes" />
+</xs:schema>

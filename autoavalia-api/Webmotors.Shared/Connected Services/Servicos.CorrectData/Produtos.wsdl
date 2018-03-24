@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Produtos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IProdutos_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.Decodificador" />
+      <xsd:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.Produtos" />
+      <xsd:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.Recall" />
+      <xsd:import schemaLocation="https://www.correctdata.com.br/Manager/Services/Produtos.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Correct.Model.DebitosRestricoesSP" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProdutos_DecodificarChassiPrecificadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:DecodificarChassiPrecificadores" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_DecodificarChassiPrecificadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DecodificarChassiPrecificadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Agregados_InputMessage">
+    <wsdl:part name="parameters" element="tns:Agregados" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Agregados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_DebitosRestricoes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DebitosRestricoes" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_DebitosRestricoes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DebitosRestricoesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_HistRouboFurto_InputMessage">
+    <wsdl:part name="parameters" element="tns:HistRouboFurto" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_HistRouboFurto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HistRouboFurtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_gravame_InputMessage">
+    <wsdl:part name="parameters" element="tns:gravame" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_gravame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:gravameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_ProprietariosAnteriores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProprietariosAnteriores" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_ProprietariosAnteriores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProprietariosAnterioresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Renajud_InputMessage">
+    <wsdl:part name="parameters" element="tns:Renajud" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Renajud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenajudResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_IndSinPerTot_InputMessage">
+    <wsdl:part name="parameters" element="tns:IndSinPerTot" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_IndSinPerTot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IndSinPerTotResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Leilao_InputMessage">
+    <wsdl:part name="parameters" element="tns:Leilao" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Leilao_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeilaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Leilao2_InputMessage">
+    <wsdl:part name="parameters" element="tns:Leilao2" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Leilao2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Leilao2Response" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Leilao3_InputMessage">
+    <wsdl:part name="parameters" element="tns:Leilao3" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Leilao3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Leilao3Response" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Nacional_InputMessage">
+    <wsdl:part name="parameters" element="tns:Nacional" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Nacional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NacionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Recall_InputMessage">
+    <wsdl:part name="parameters" element="tns:Recall" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_Recall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_DebitosRestricoesSP_InputMessage">
+    <wsdl:part name="parameters" element="tns:DebitosRestricoesSP" />
+  </wsdl:message>
+  <wsdl:message name="IProdutos_DebitosRestricoesSP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DebitosRestricoesSPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProdutos">
+    <wsdl:operation name="DecodificarChassiPrecificadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/DecodificarChassiPrecificadores" message="tns:IProdutos_DecodificarChassiPrecificadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/DecodificarChassiPrecificadoresResponse" message="tns:IProdutos_DecodificarChassiPrecificadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Agregados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Agregados" message="tns:IProdutos_Agregados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/AgregadosResponse" message="tns:IProdutos_Agregados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DebitosRestricoes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/DebitosRestricoes" message="tns:IProdutos_DebitosRestricoes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/DebitosRestricoesResponse" message="tns:IProdutos_DebitosRestricoes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HistRouboFurto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/HistRouboFurto" message="tns:IProdutos_HistRouboFurto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/HistRouboFurtoResponse" message="tns:IProdutos_HistRouboFurto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="gravame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/gravame" message="tns:IProdutos_gravame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/gravameResponse" message="tns:IProdutos_gravame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProprietariosAnteriores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/ProprietariosAnteriores" message="tns:IProdutos_ProprietariosAnteriores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/ProprietariosAnterioresResponse" message="tns:IProdutos_ProprietariosAnteriores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Renajud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Renajud" message="tns:IProdutos_Renajud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/RenajudResponse" message="tns:IProdutos_Renajud_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IndSinPerTot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/IndSinPerTot" message="tns:IProdutos_IndSinPerTot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/IndSinPerTotResponse" message="tns:IProdutos_IndSinPerTot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Leilao">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Leilao" message="tns:IProdutos_Leilao_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/LeilaoResponse" message="tns:IProdutos_Leilao_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Leilao2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Leilao2" message="tns:IProdutos_Leilao2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/Leilao2Response" message="tns:IProdutos_Leilao2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Leilao3">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Leilao3" message="tns:IProdutos_Leilao3_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/Leilao3Response" message="tns:IProdutos_Leilao3_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Nacional">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Nacional" message="tns:IProdutos_Nacional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/NacionalResponse" message="tns:IProdutos_Nacional_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Recall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/Recall" message="tns:IProdutos_Recall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/RecallResponse" message="tns:IProdutos_Recall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DebitosRestricoesSP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutos/DebitosRestricoesSP" message="tns:IProdutos_DebitosRestricoesSP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutos/DebitosRestricoesSPResponse" message="tns:IProdutos_DebitosRestricoesSP_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IProdutos" type="tns:IProdutos">
+    <wsp:PolicyReference URI="#CustomBinding_IProdutos_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DecodificarChassiPrecificadores">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/DecodificarChassiPrecificadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Agregados">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Agregados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitosRestricoes">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/DebitosRestricoes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistRouboFurto">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/HistRouboFurto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="gravame">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/gravame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProprietariosAnteriores">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/ProprietariosAnteriores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Renajud">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Renajud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndSinPerTot">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/IndSinPerTot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Leilao">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Leilao" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Leilao2">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Leilao2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Leilao3">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Leilao3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Nacional">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Nacional" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Recall">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/Recall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DebitosRestricoesSP">
+      <soap:operation soapAction="http://tempuri.org/IProdutos/DebitosRestricoesSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Produtos">
+    <wsdl:port name="CustomBinding_IProdutos" binding="tns:CustomBinding_IProdutos">
+      <soap:address location="https://www.correctdata.com.br/Manager/Services/Produtos.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
