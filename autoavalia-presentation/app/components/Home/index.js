@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
-import brandWebmotors from '../../assets/images/brands/brand-webmotors-color.svg';
+import Header from '../Header';
+import Footer from '../Footer';
 import brandAutoAvalia from '../../assets/images/brands/brand-auto-avalia.svg';
 
 export default class Home extends Component {
 	render() {
 		return (
-			<div>
-				<header className="header">
-					<div className="container">
-						<h1 className="header__brand">
-							<a href="#">
-								<img src={brandWebmotors} />					
-							</a>
-						</h1>
-					</div>
-				</header>
+			<div className="page page--home">
+				<Header />
 				<main className="main">
 					<section className="section section--auto-avalia">
 						<div className="container">
@@ -42,8 +35,7 @@ export default class Home extends Component {
 						</div>
 					</section>
 				</main>
-				<footer className="footer">
-				</footer>
+				<Footer />
 			</div>
 		);
 	}
