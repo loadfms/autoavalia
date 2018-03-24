@@ -8,7 +8,7 @@ namespace Webmotors.Api.Classes
 {
 	public class Cluster: IEntity<long>
 	{
-	    [BsonRepresentation(BsonType.ObjectId)]
+	    [BsonRepresentation(BsonType.Int64)]
 	    public long Id { get; set; }
 	    public string Name { get; set; }
 	    public string Alias { get; set; }

@@ -7,7 +7,7 @@ namespace Webmotors.Api.Classes
 {
     public class Questionnaire : IEntity<long>
     {
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonRepresentation(BsonType.Int64)]
         public long Id { get; set; }
         public int UserId { get; set; }
         public int AdvertiseId { get; set; }
