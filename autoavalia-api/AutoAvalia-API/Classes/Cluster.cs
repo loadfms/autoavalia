@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
-namespace AutoAvalia_API.Classes
+namespace Webmotors.Api.Classes
 {
 	public class Cluster
 	{

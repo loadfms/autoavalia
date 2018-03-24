@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using Webmotors.Shared.Database;
 
-namespace AutoAvalia_API.Classes
+namespace Webmotors.Api.Classes
 {
     public class Question : IEntity<long>
     {

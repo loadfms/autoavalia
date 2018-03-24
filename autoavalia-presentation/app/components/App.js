@@ -1,16 +1,16 @@
-import React from 'react';
-import Top from './Header/index';
-import Routes from './Routes/index';
-import Footer from './Footer/index';
+import React, { Component } from 'react';
+import Header from './Header';
+import Routes from './Routes';
+import Footer from './Footer';
 
-const App = () => {
-  return (
-  <div>
-    <Top />
-    <Routes />
-    <Footer />
-  </div>
-  );
-};
-
-export default App;
+export default class App extends Component {
+	render() {
+		return (
+			<div className="app">
+				{/* <Header /> */}
+				<Routes />
+				{/* <Footer /> */}
+			</div>
+		);
+	}
+}
