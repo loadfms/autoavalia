@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 using Webmotors.Api.Classes;
 using Webmotors.Shared.Database.NoSql;
-using System.Web.Http.Cors;
-using System.Web.Http;
+using Webmotors.Shared.Services;
 
 namespace Webmotors.Api.Controllers
 {
     public class ReportController : CrudApi<Report>
     {
-        [HttpGet]
+        [HttpPost]
         [Route("api/report/create/{questionnaireId}")]
         public Report CreateReport(string questionnaireId)
         {
@@ -25,11 +25,20 @@ namespace Webmotors.Api.Controllers
                 var clusters = clusterRepository.ToList();
                 var questions = questionRepository.ToList();
                 var answers = answerRepository.Where(x => x.QuestionnaireId == questionnaireId).ToList();
+                var service = new VehicleInformationService();
+                var history = service.GetVehicleInformation("placa");
                 var report = reportRepository.Add(new Report
                 {
                     QuestionnaireId = questionnaire.Id,
                     State = new ReportState(),
-                    History = new ReportHistory(),
+                    History = new ReportHistory
+                    {
+                        OnwerQuantity = history.OnwerQuantity,
+                        Recall = history.Recall,
+                        Auction = history.Auction,
+                        Accidents = history.Accidents,
+                        Roberry = history.Roberry,
+                    },
                     VehicleAdvert = new VehicleAdvert(),
                     Clusters = clusters.Select(x =>
                     {
