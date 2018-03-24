@@ -5,14 +5,12 @@ using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
-    public class Questionnaire : IEntity<long>
+    public class Questionnaire : Entity
     {
-        [BsonRepresentation(BsonType.Int64)]
-        public long Id { get; set; }
         public int UserId { get; set; }
         public int AdvertiseId { get; set; }
         [BsonIgnore]
-        public List<Cluster> clusterList { get; set; }
+        public List<Cluster> ClusterList { get; set; }
         
     }
 }

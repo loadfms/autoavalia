@@ -6,6 +6,12 @@ using Webmotors.Shared.Database.NoSql;
 
 namespace Webmotors.Api.Controllers
 {
+
+    public abstract class CrudApi<T> : CrudApi<T, string> where T : IEntity<string>
+    {
+
+    }
+
     public abstract class CrudApi<T, TKey> : ApiController where T : IEntity<TKey>
     {
         public List<T> Get()

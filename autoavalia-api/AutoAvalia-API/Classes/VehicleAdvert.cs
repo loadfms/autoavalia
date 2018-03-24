@@ -6,10 +6,8 @@ using Webmotors.Shared.Database;
 namespace Webmotors.Api.Classes
 {
 	[BsonIgnoreExtraElements]
-	public class VehicleAdvert : IEntity<long>
+	public class VehicleAdvert : Entity
     {
-        [BsonRepresentation(BsonType.Int64)]
-        public long Id { get; set; }
         public Seller Seller { get; set; }
 		public Prices Prices { get; set; }
         public string LongComment { get; set; }

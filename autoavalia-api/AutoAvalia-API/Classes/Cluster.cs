@@ -6,10 +6,8 @@ using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
-	public class Cluster: IEntity<long>
+	public class Cluster: Entity
 	{
-	    [BsonRepresentation(BsonType.Int64)]
-	    public long Id { get; set; }
 	    public string Name { get; set; }
 	    public string Alias { get; set; }
 	    public string Description { get; set; }

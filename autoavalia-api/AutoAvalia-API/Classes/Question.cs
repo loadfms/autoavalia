@@ -9,11 +9,8 @@ using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
-    public class Question : IEntity<long>
+    public class Question : Entity
     {
-		[JsonProperty]
-		[BsonRepresentation(BsonType.Int64)]
-		public long Id { get; set; }
 		[JsonProperty]
 		public int Order { get; set; }
 		[JsonProperty]

@@ -4,12 +4,10 @@ using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
-    public class Answer : IEntity<long>
+    public class Answer : Entity
     {
-        [BsonRepresentation(BsonType.Int64)]
-        public long Id { get; set; }
-		public long QuestionId { get; set; }
-        public long QuestionnaireId { get; set; }
+		public string QuestionId { get; set; }
+        public string QuestionnaireId { get; set; }
 		public int PartId { get; set; }
         public string Photo { get; set; }
     }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using Webmotors.Api.Classes;
-using Webmotors.Api.Controllers;
-using Webmotors.Shared.Database.NoSql;
 
-namespace AutoAvalia_API.Controllers
+namespace Webmotors.Api.Controllers
 {
-    public class QuestionController : CrudApi<Question, long>
+    public class QuestionController : CrudApi<Question>
     {
 
         [HttpGet]
