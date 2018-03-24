@@ -1,4 +1,4 @@
-namespace AutoAvalia_API.Areas.HelpPage.ModelDescriptions
+namespace Webmotors.Api.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

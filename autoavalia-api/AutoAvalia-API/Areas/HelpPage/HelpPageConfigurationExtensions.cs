@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using AutoAvalia_API.Areas.HelpPage.ModelDescriptions;
-using AutoAvalia_API.Areas.HelpPage.Models;
+using Webmotors.Api.Areas.HelpPage.ModelDescriptions;
+using Webmotors.Api.Areas.HelpPage.Models;
 
-namespace AutoAvalia_API.Areas.HelpPage
+namespace Webmotors.Api.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using AutoAvalia_API.Areas.HelpPage.ModelDescriptions;
-using AutoAvalia_API.Areas.HelpPage.Models;
+using Webmotors.Api.Areas.HelpPage.ModelDescriptions;
+using Webmotors.Api.Areas.HelpPage.Models;
 
-namespace AutoAvalia_API.Areas.HelpPage.Controllers
+namespace Webmotors.Api.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

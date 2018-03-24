@@ -1,6 +1,6 @@
 using System;
 
-namespace AutoAvalia_API.Areas.HelpPage.ModelDescriptions
+namespace Webmotors.Api.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.
