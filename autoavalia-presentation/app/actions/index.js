@@ -21,6 +21,16 @@ export function fetchQuestion(questionaryId, clusterId, callback) {
     })
 }
 
+export function fetchReport(questionaryId, callback) {
+  return axios.get(config.api + 'api/report/create/' + questionaryId)
+    .then((response) => {
+      callback(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+}
+
 export function fetchAnswer(model, callback) {
   return axios.post(config.api + 'api/Answer', model)
     .then((response) => {
@@ -40,3 +50,4 @@ export function fetchPhoto(model, callback) {
       console.log(err);
     })
 }
+
