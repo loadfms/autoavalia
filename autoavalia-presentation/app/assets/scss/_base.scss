@@ -38,7 +38,8 @@ body {
 	}
 	.section--cards-auto-avalia &,
 	.section--cards &,
-	.section--answer & {
+	.section--answer &,
+	.section--valuation & {
 		width: calc(100% - 16px);
 	}
 
@@ -85,6 +86,11 @@ body {
 		text-transform: initial;
 	}
 }
+.buttons {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
 /* END BUTTON
 ------------------------------------*/
 /* SECTION
@@ -100,6 +106,14 @@ body {
 		text-align: center;
 		margin-bottom: 7px;
 		line-height: normal;
+		.section--valuation & {
+			color: #2E2D37;
+			font-size: 1.3rem;
+			line-height: 20px;
+			font-weight: 600;
+			text-align: center;
+			margin-top: 16px;
+		}	
 	}
 	&__description {
 		color: #8b8c99;
@@ -132,6 +146,9 @@ body {
 		padding: 20px 0 30px 0;
 		background-color: #fff;
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+	}
+	&--valuation {
+		padding-bottom: 30px;
 	}
 }
 /* END SECTION
@@ -208,6 +225,24 @@ body {
 				background-image: url($s3_image_path + "icon-mechanic.png");
 			}				
 		}
+		&--mechanic {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-mechanic.png");
+			}				
+		}
+		&--report {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-report.png");
+			}	
+		}
+		&--valuation {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-valuation.png");
+			}	
+		}		
+		.section--cards-auto-avalia	& {
+			background-color: #fff;
+		}	
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -340,15 +375,4 @@ body {
 	}
 }
 /* END QUESTION
-------------------------------------*/
-/* ANSWER
-------------------------------------*/
-.answer {
-	&__buttons {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-	}
-}
-/* END ANSWER
 ------------------------------------*/
