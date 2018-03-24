@@ -20,6 +20,6 @@ namespace Webmotors.Api.Classes
 		[JsonProperty]
 		public string Description { get; set; }
 		[JsonProperty]
-		public long IdCluster { get; set; }
+		public string IdCluster { get; set; }
 	}
 }
