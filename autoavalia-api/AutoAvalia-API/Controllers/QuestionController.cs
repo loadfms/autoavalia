@@ -12,10 +12,31 @@ namespace AutoAvalia_API.Controllers
     public class QuestionController : CrudApi<Question, long>
     {
 		[HttpGet]
-		[Route("api/Question/Clusters/{userId}/{advertiseId}")]
+		[Route("api/Clusters/{userId}/{advertiseId}")]
 		public List<Cluster> ListCluster(int userId, int advertiseId)
 		{
-			return new List<Cluster>();
+            //List<Cluster> listCluster = new QuickRepository<Question, long>().GroupBy(x => x.Cluster)
+            //    .Select(group => new Cluster
+            //    {
+            //        Name = group.Key
+            //    }).ToList();
+
+            List<Question> listQuestion = new QuickRepository<Question, long>().ToList();
+
+            List<Cluster> listCluster = listQuestion.GroupBy(x => x.Cluster)
+                .Select(group => new Cluster
+                {
+                    Name = group.Key
+                }).ToList();
+
+            return listCluster;
 		}
+
+        [HttpGet]
+        [Route("api/Question/{userId}/{advertiseId}/{cluster}")]
+        public List<Question> ListQuestionByCluster(int userId, int advertiseId, string cluster)
+        {
+            return new List<Question>();
+        }
 	}
 }
