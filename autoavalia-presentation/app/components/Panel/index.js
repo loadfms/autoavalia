@@ -3,7 +3,8 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
 import {fetchCluster} from './../../actions/index';
-import Storage from './../../helpers/storage'
+import Storage from './../../helpers/storage';
+import {withRouter} from 'react-router-dom';
 
 export default class Panel extends Component {
 	constructor(props) {
@@ -12,8 +13,9 @@ export default class Panel extends Component {
 		this.state = {
 			items: []
 		}
-	}
 
+		this.handleCardClusterClick = this.handleCardClusterClick.bind(this);
+	}
 
 	componentWillMount() {
 		let _this = this;
@@ -21,6 +23,10 @@ export default class Panel extends Component {
 			_this.setState({ items: response.data });
 			Storage.setStore(response.data);
 		});
+	}
+
+	handleCardClusterClick(id) {
+		this.props.history.push('/questao/' + id);
 	}
 
 	render() {
@@ -39,7 +45,7 @@ export default class Panel extends Component {
 									this.state.items && this.state.items.clusterList ?
 										this.state.items.clusterList.map((item) => {
 											return (
-												<Card key={item.Name} title={item.Name} description={item.Description} cluster={item.Alias} filledSteps={item.QuestionsAnswered} totalSteps={item.Questions} />
+												<Card key={item.Name} title={item.Name} description={item.Description} cluster={item.Alias} filledSteps={item.QuestionsAnswered} totalSteps={item.Questions} onClick={() => this.handleCardClusterClick(item.Id)} />
 											)
 										})
 										: null
