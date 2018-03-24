@@ -61,6 +61,7 @@ body {
 	cursor: pointer;
 	outline: none;
 	position: relative;
+	user-select: none;
 	&--success {
 		background-color: #50E3C2;
 		&:before {
