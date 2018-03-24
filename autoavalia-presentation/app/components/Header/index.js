@@ -5,14 +5,13 @@ export default class Header extends Component {
 	constructor(props) {
 		super(props);
 		
-		this.handleBackButton = this.handleBackButton.bind(this);
 	}
 	
 	render() {
 		return (
 			<header className="header">
 				<div className="container">
-					<a className="header__back" onClick={this.handleBackButton}></a>
+					<a className="header__back"></a>
 					<h1 className="header__brand">
 						<a href="#">
 							<img src={brandWebmotors} />					
