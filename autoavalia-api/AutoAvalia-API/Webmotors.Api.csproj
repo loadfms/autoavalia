@@ -177,12 +177,14 @@
     <Compile Include="Classes\Cluster.cs" />
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\AssetUploadResult.cs" />
+    <Compile Include="Classes\Questionnaire.cs" />
     <Compile Include="Classes\VehicleAdvert.cs" />
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\AssetsController.cs" />
     <Compile Include="Controllers\CrudApi.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\QuestionnaireController.cs" />
     <Compile Include="Controllers\VehicleAdvertController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
