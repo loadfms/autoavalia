@@ -3,7 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Progress from '../Progress';
 import Storage from './../../helpers/storage'
-import { fetchQuestion, fetchAnswer } from './../../actions/index';
+import { fetchQuestion, fetchAnswer, fetchPhoto } from './../../actions/index';
 import { withRouter } from 'react-router-dom';
 
 export default class Question extends Component {
@@ -19,6 +19,19 @@ export default class Question extends Component {
 		}
 
 		this.setValue = this.setValue.bind(this);
+		this.firePhotoEvent = this.firePhotoEvent.bind(this);
+	}
+
+	firePhotoEvent(e) {
+		const _file = e.target.files[0];
+		let _data = new FormData();
+		_data.append('UploadedImage', _file);
+
+		fetchPhoto(_data, (response) => {
+			if (response.data && response.data.Success == true){
+				alert(response.data.BlobName);
+			}
+		})
 	}
 
 	setValue(e) {
@@ -69,6 +82,7 @@ export default class Question extends Component {
 					<Header />
 					<main className="main">
 						<Progress filledSteps={0} totalSteps={1} />
+						<input type="file" accept="image/*" capture="camera" onChange={this.firePhotoEvent}></input>
 						<section className="section section--question">
 							<div className="container">
 								<div className="question">

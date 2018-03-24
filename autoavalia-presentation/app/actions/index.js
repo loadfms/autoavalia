@@ -30,3 +30,13 @@ export function fetchAnswer(model, callback) {
       console.log(err);
     })
 }
+
+export function fetchPhoto(model, callback) {
+  return axios.post(config.api + 'api/assets/upload', model)
+    .then((response) => {
+      callback(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+}
