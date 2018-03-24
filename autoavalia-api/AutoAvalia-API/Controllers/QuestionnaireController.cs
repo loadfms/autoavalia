@@ -29,19 +29,21 @@ namespace Webmotors.Api.Controllers
 
 
             List<Question> listQuestion = new QuickRepository<Question, long>().ToList();
-            List<Answer> listAnswer = new QuickRepository<Answer, string>().Where(x => x.QuestionnaireId == questionnaire.Id).ToList();
-            List<Cluster> listCluster = listQuestion.GroupBy(
-                    x => x.Cluster, y => y
-                )
-                .Select(group => new Cluster
-                {
-                    Name = group.Key,
-                    QuestionList = group.ToList(),
-                    AnswerList = listAnswer.Where(
-                        x => group.Any (y => y.Id == x.QuestionId)
-                    ).ToList()
+            List<Answer> listAnswer = new QuickRepository<Answer, long>().Where(x => x.QuestionnaireId == questionnaire.Id).ToList();
+            List<Cluster> listCluster = new QuickRepository<Cluster, long>().ToList();
 
-                }).ToList();
+            //List<Cluster> listCluster = listQuestion.GroupBy(
+            //        x => x.Cluster, y => y
+            //    )
+            //    .Select(group => new Cluster
+            //    {
+            //        Name = group.Key,
+            //        QuestionList = group.ToList(),
+            //        AnswerList = listAnswer.Where(
+            //            x => group.Any (y => y.Id == x.QuestionId)
+            //        ).ToList()
+
+            //    }).ToList();
 
             questionnaire.clusterList = listCluster;
 
