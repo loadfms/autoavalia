@@ -11,3 +11,12 @@ export function fetchQuestionnaire(userId, advertiseId, callback) {
     })
 }
 
+export function fetchAnswer(model, callback) {
+  return axios.post(config.api + 'api/Answer', model)
+    .then((response) => {
+      callback(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+}

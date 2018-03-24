@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Webmotors.Api.Classes;
@@ -37,7 +36,11 @@ namespace Webmotors.Api.Controllers
                 x.QuestionList = listQuestion.Where(
                     y => y.IdCluster == x.Id
                 ).ToList();
-                x.AnswerList = listAnswer;
+                x.AnswerList = listAnswer.Where( y => 
+                    x.QuestionList.Any(
+                        z => z.Id == y.QuestionId
+                    )
+                ).ToList();
                 return x;
             }).ToList();
 
