@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
 using Webmotors.Api.Classes;
 using Webmotors.Shared.Database.NoSql;
+using System.Web.Http.Cors;
+using System.Web.Http;
 
 namespace Webmotors.Api.Controllers
 {
     public class ReportController : CrudApi<Report>
     {
-        [HttpPost]
+        [HttpGet]
         [Route("api/report/create/{questionnaireId}")]
         public Report CreateReport(string questionnaireId)
         {

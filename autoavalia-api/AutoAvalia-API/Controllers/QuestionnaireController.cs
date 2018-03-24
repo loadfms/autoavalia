@@ -12,7 +12,6 @@ namespace Webmotors.Api.Controllers
     {
         
         [HttpGet]
-        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         [Route("api/Questionnaire/{userId}/{advertiseId}")]
         public Questionnaire Questionnaire(int userId, int advertiseId)
         {
