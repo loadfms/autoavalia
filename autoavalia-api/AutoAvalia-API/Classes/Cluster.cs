@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Webmotors.Api.Classes
 {
-	public class Cluster
-	{
-		public string Name { get; set; }
+    public class Cluster
+    {
+        public string Name { get; set; }
         public List<Question> QuestionList { get; set; }
         public List<Answer> AnswerList { get; set; }
 
