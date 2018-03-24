@@ -25,9 +25,9 @@ export default class Panel extends Component {
 		let _totalDone = 0;
 		let _totalToDo = 0;
 
-		fetchQuestionnaire(1, 4, (response) => {
-			for (let index = 0; index < response.data.clusterList.length; index++) {
-				const element = response.data.clusterList[index];
+		fetchQuestionnaire(1, 1, (response) => {
+			for (let index = 0; index < response.data.ClusterList.length; index++) {
+				const element = response.data.ClusterList[index];
 				_totalDone += element.QuestionsAnswered;
 				_totalToDo += element.Questions;
 			}
@@ -60,8 +60,8 @@ export default class Panel extends Component {
 							<div className="cards">
 								<Card title={"Histórico do veículo"} description={"Dados de documentação e uso"} cluster={"historic"} filledSteps={1} totalSteps={1} />
 								{
-									this.state.items && this.state.items.clusterList ?
-										this.state.items.clusterList.map((item) => {
+									this.state.items && this.state.items.ClusterList ?
+										this.state.items.ClusterList.map((item) => {
 											return (
 												<Card key={item.Name} title={item.Name} description={item.Description} cluster={item.Alias} filledSteps={item.QuestionsAnswered} totalSteps={item.Questions} onClick={() => this.handleCardClusterClick(item.Id)} />
 											)

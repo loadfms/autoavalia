@@ -11,6 +11,16 @@ export function fetchQuestionnaire(userId, advertiseId, callback) {
     })
 }
 
+export function fetchQuestion(questionaryId, clusterId, callback) {
+  return axios.get(config.api + 'api/Question/' + questionaryId + '/' + clusterId)
+    .then((response) => {
+      callback(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+}
+
 export function fetchAnswer(model, callback) {
   return axios.post(config.api + 'api/Answer', model)
     .then((response) => {
