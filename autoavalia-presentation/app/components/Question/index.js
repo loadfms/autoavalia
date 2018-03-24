@@ -19,6 +19,8 @@ export default class Question extends Component {
 		}
 
 		this.setValue = this.setValue.bind(this);
+		this.handleMyselfClick = this.handleMyselfClick.bind(this);
+		this.onClickBackButton = this.onClickBackButton.bind(this);
 	}
 
 	setValue(e) {
@@ -62,11 +64,19 @@ export default class Question extends Component {
 		});
 	}
 
+	handleMyselfClick() {
+		this.props.history.push('/painel');
+	}
+	
+	onClickBackButton() {
+		this.props.history.goBack();
+	}
+
 	render() {
 		if (this.state.currentQuestion) {
 			return (
 				<div className="page page--question">
-					<Header />
+					<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
 					<main className="main">
 						<Progress filledSteps={0} totalSteps={1} />
 						<section className="section section--question">
