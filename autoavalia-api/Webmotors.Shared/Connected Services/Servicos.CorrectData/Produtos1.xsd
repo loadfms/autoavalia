@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Correct.Model.Recall" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Correct.Model.Recall" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DtoRecall">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalhes" nillable="true" type="tns:ArrayOfDtoRecallDetalhes" />
+      <xs:element minOccurs="0" name="DsAnoModelo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DsMarca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DsModelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DsRetorno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NuCdRetorno" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="chassi" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoRecall" nillable="true" type="tns:DtoRecall" />
+  <xs:complexType name="ArrayOfDtoRecallDetalhes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DtoRecallDetalhes" nillable="true" type="tns:DtoRecallDetalhes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDtoRecallDetalhes" nillable="true" type="tns:ArrayOfDtoRecallDetalhes" />
+  <xs:complexType name="DtoRecallDetalhes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdProcon" type="xs:int" />
+      <xs:element minOccurs="0" name="dsCNPJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsDefeito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsDivisao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsRazaoSocial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsRisco" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dsTextoCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dtInicioCampanha" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DtoRecallDetalhes" nillable="true" type="tns:DtoRecallDetalhes" />
+</xs:schema>

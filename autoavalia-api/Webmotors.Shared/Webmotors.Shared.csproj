@@ -64,6 +64,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,11 @@
   <ItemGroup>
     <Compile Include="Caching\CacheContainer.cs" />
     <Compile Include="Caching\Cached.cs" />
+    <Compile Include="Connected Services\Servicos.CorrectData\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Database\Entity.cs" />
     <Compile Include="Database\IEntity.cs" />
     <Compile Include="Database\IRepository.cs" />
@@ -87,12 +93,89 @@
     <Compile Include="IO\IFileUploadClient.cs" />
     <Compile Include="IO\StreamHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\VehicleInformation.cs" />
+    <Compile Include="Services\VehicleInformationService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\Servicos.CorrectData\Produtos.wsdl" />
+    <None Include="Connected Services\Servicos.CorrectData\Produtos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Produtos1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Produtos2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Produtos3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Produtos4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Produtos5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DebitosRestricoesSP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoAgregados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoBinNacional.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoDebitosRestricoes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoGravame.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoHistoricoRouboFurto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoIndSinPerTot.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoLeilao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoProprietariosAnteriores.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoRecall.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoRenajud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Servicos.CorrectData\Webmotors.Shared.Servicos.CorrectData.DtoVeiculoDecodificado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Services\" />
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Servicos.CorrectData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Servicos.CorrectData\Produtos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Servicos.CorrectData\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Servicos.CorrectData\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Servicos.CorrectData\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Http;
 using Webmotors.Api.Classes;
 using Webmotors.Shared.IO;
+using System.Web.Http.Cors;
 
 namespace Webmotors.Api.Controllers
 {
@@ -26,7 +27,8 @@ namespace Webmotors.Api.Controllers
             );
         }
 
-		[Route("api/assets/upload")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("api/assets/upload")]
 		[HttpPost]
         public AssetUploadResult UploadImage()
         {

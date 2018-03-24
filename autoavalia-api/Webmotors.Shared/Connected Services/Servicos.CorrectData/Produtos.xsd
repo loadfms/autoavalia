@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Correct.Model.DebitosRestricoesSP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Correct.Model.DebitosRestricoesSP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DebitosRestricoesSP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BloqueioFurto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CdRetorno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPVA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspecaoGNV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InspecaoVeicularAno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenciamentoAno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Placa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroGuincho" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Renavam" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestricaoAdministrativa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestricaoFinanceira" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestricaoJudiciaria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestricaoTributaria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ano" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="anoModelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chassi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="marca" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="municipio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="situacao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="uf" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DebitosRestricoesSP" nillable="true" type="tns:DebitosRestricoesSP" />
+</xs:schema>

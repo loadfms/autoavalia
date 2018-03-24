@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
-using Webmotors.Api.Classes;
 using Webmotors.Shared.Database.NoSql;
+using Webmotors.Shared.Services;
+using System.Web.Http;
+using Webmotors.Api.Classes;
 
 namespace Webmotors.Api.Controllers
 {
@@ -24,11 +25,20 @@ namespace Webmotors.Api.Controllers
                 var clusters = clusterRepository.ToList();
                 var questions = questionRepository.ToList();
                 var answers = answerRepository.Where(x => x.QuestionnaireId == questionnaireId).ToList();
+                var service = new VehicleInformationService();
+                var history = service.GetVehicleInformation("placa");
                 var report = reportRepository.Add(new Report
                 {
                     QuestionnaireId = questionnaire.Id,
                     State = new ReportState(),
-                    History = new ReportHistory(),
+                    History = new ReportHistory
+                    {
+                        OnwerQuantity = history.OnwerQuantity,
+                        Recall = history.Recall,
+                        Auction = history.Auction,
+                        Accidents = history.Accidents,
+                        Roberry = history.Roberry,
+                    },
                     VehicleAdvert = new VehicleAdvert(),
                     Clusters = clusters.Select(x =>
                     {
@@ -42,7 +52,8 @@ namespace Webmotors.Api.Controllers
                                 var question = clusterQuestions.First(z => y.QuestionId == z.Id);
                                 return new ReportAnswer {
                                     Name = question.Name,
-                                    Price = question.Price
+                                    Price = question.Price,
+                                    Photo = y.Photo
                                 };
                             }).ToList()
                         };

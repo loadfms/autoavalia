@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Webmotors.Shared.Database;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Webmotors.Api.Classes
+namespace Webmotors.Shared.Services
 {
-    public class ReportHistory
+    public class VehicleInformation
     {
         public int OnwerQuantity { get; set; }
         public bool Accidents { get; set; }
