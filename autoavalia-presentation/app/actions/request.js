@@ -2,7 +2,7 @@ import axios from 'axios';
 import config from './../../config/json.json'
 
 export function fetchCluster(userId, advertiseId) {
-  return axios.get(config.apiPfUrl + 'api/Question/Clusters/' + userId + '/' + advertiseId)
+  return axios.get(config.apiPfUrl + 'api/Clusters/' + userId + '/' + advertiseId)
     .then((response) => {
       return response;
     })
