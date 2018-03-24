@@ -6,5 +6,6 @@ namespace Webmotors.Api.Classes
     {
         public string Name { get; set; }
         public List<ReportAnswer> Answers { get; set; }
+        public int Warnings => Answers?.Count ?? 0;
     }
 }
