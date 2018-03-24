@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import Progress from '../Progress';
 import Storage from './../../helpers/storage'
 import { fetchQuestion, fetchAnswer } from './../../actions/index';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 export default class Question extends Component {
 	constructor(props) {
@@ -27,7 +27,6 @@ export default class Question extends Component {
 			if (this.state.value == "yes") {
 				alert('posta a porra da foto!')
 			} else {
-				console.log(1);
 				this.answerQuestion();
 			}
 		});
@@ -40,7 +39,6 @@ export default class Question extends Component {
 			Value: this.state.value,
 			Photo: this.state.photo
 		}
-		console.log(_model);
 
 		fetchAnswer(_model, (response) => {
 			this.getCurrentQuestion();
@@ -55,7 +53,7 @@ export default class Question extends Component {
 		let _this = this;
 		fetchQuestion(this.props.match.params.questionary, this.props.match.params.id, (response) => {
 			if (response.data == null) {
-		this.props.history.push('/painel');
+				this.props.history.push('/painel');
 			} else {
 				_this.setState({
 					currentQuestion: response.data
