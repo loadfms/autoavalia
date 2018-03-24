@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
-import {fetchQuestionnaire} from './../../actions/index';
+import { fetchQuestionnaire } from './../../actions/index';
 import Storage from './../../helpers/storage';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 export default class Panel extends Component {
@@ -34,14 +34,10 @@ export default class Panel extends Component {
 				_totalToDo += element.Questions;
 			}
 			_this.setState({
-				items: response.data
+				items: response.data,
+				totalDone: _totalDone,
+				totalToDo: _totalToDo
 			});
-			Storage.setStore(response.data);
-		});
-
-		this.setState({
-			totalDone: _totalDone,
-			totalToDo: _totalToDo
 		});
 	}
 
@@ -52,13 +48,15 @@ export default class Panel extends Component {
 	handleMyselfClick() {
 		this.props.history.push('/painel');
 	}
-	
+
 	onClickBackButton() {
 		this.props.history.goBack();
 	}
 
 	render() {
-		console.log(this.state.items);
+		console.log('**********');
+		console.log(this.state.totalDone);
+		console.log(this.state.totalToDo);
 		return (
 			<div className="page page--panel">
 				<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
