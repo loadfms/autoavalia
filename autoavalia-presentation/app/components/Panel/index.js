@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
-import {fetchCluster} from './../../actions/index';
+import { fetchCluster } from './../../actions/index';
 import Storage from './../../helpers/storage'
 
 export default class Panel extends Component {
@@ -10,16 +10,32 @@ export default class Panel extends Component {
 		super(props);
 
 		this.state = {
-			items: []
+			items: [],
+			totalDone: undefined,
+			totalSteps: undefined
 		}
 	}
 
-
 	componentWillMount() {
 		let _this = this;
-		fetchCluster(1, 1, (response) => {
-			_this.setState({ items: response.data });
+		let _totalDone = 0;
+		let _totalToDo = 0;
+
+		fetchCluster(1, 4, (response) => {
+			for (let index = 0; index < response.data.clusterList.length; index++) {
+				const element = response.data.clusterList[index];
+				_totalDone += element.QuestionsAnswered;
+				_totalToDo += element.Questions;
+			}
+			_this.setState({
+				items: response.data
+			});
 			Storage.setStore(response.data);
+		});
+
+		this.setState({
+			totalDone: _totalDone,
+			totalToDo: _totalToDo
 		});
 	}
 
@@ -29,12 +45,12 @@ export default class Panel extends Component {
 				<Header />
 				<main className="main">
 					<section className="section section--total-progress">
-						<Card title={"Avaliação do veículo"} type={"inside"} cluster={"total-progress"} filledSteps={4} totalSteps={10} />
+						<Card title={"Avaliação do veículo"} type={"inside"} cluster={"total-progress"} filledSteps={this.state.totalDone} totalSteps={this.state.totalToDo} />
 					</section>
 					<section className="section section--cards">
 						<div className="container">
 							<div className="cards">
-							<Card title={"Histórico do veículo"} description={"Dados de documentação e uso"} cluster={"historic"} filledSteps={1} totalSteps={1} />
+								<Card title={"Histórico do veículo"} description={"Dados de documentação e uso"} cluster={"historic"} filledSteps={1} totalSteps={1} />
 								{
 									this.state.items && this.state.items.clusterList ?
 										this.state.items.clusterList.map((item) => {
