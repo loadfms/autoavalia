@@ -185,6 +185,8 @@
     <Compile Include="Classes\AssetUploadResult.cs" />
     <Compile Include="Classes\Questionnaire.cs" />
     <Compile Include="Classes\Report.cs" />
+    <Compile Include="Classes\ReportAnswer.cs" />
+    <Compile Include="Classes\ReportCluster.cs" />
     <Compile Include="Classes\ReportHistory.cs" />
     <Compile Include="Classes\ReportState.cs" />
     <Compile Include="Classes\VehicleAdvert.cs" />
