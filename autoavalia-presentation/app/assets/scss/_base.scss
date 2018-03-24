@@ -35,7 +35,8 @@ body {
 		display: flex;
 		align-items: center;
 	}
-	.section--cards-auto-avalia & {
+	.section--cards-auto-avalia &,
+	.section--cards & {
 		width: calc(100% - 16px);
 	}
 

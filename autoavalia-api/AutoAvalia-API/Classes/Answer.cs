@@ -4,6 +4,7 @@ namespace Webmotors.Api.Classes
 {
     public class Answer : Entity
     {
+		public string QuestionId { get; set; }
         public int UserId { get; set; }
 		public int AdvertiseId { get; set; }
 		public int PartId { get; set; }
