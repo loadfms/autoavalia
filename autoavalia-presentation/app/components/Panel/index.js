@@ -2,8 +2,25 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Progress from '../Progress';
+import {fetchCluster} from './../../actions/index'
 
 export default class Panel extends Component {
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			items: []
+		}
+	}
+	
+	
+	componentWillMount() {
+		let _this = this;
+		fetchCluster(1,1, (data) => {
+			_this.setState({items: data });
+		});
+	}
+	
 	render() {
 		return (
 			<div className="page page--panel">
