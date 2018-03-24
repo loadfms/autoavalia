@@ -11,23 +11,30 @@ namespace Webmotors.Api.Controllers
     {
         [HttpPost]
         [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
-        [Route("api/answer/{questionnaireId}/{questionId}/{value}/{photo}")]
-        public void Answer([FromBody] string questionnaireId, string questionId, bool value, string photo)
+        [Route("api/answer")]
+        public void Answer([FromBody] answerPost _answer)
         {
             var answerRepo = new QuickRepository<Answer>();
             var questionRepo = new QuickRepository<Question>();
             answerRepo.Add(new Answer
             {
-                QuestionId = questionId,
-                QuestionnaireId = questionnaireId,
-                Value = value,
-                Photo = photo,
-                AnsweredAt = DateTime.Now
+                QuestionId = _answer.QuestionId,
+                QuestionnaireId = _answer.QuestionnaireId,
+                Value = _answer.Value,
+                Photo = _answer.Photo
             });
 
             //var question = questionRepo.Where(x => x.Id == questionId).FirstOrDefault();
 
             //question = questionRepo.Where(x => x.Order == question.Order + 1).FirstOrDefault();
+        }
+
+        public class answerPost
+        {
+            public string QuestionId;
+            public string QuestionnaireId;
+            public bool Value;
+            public string Photo;
         }
 
     }
