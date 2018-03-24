@@ -82,6 +82,8 @@ export default class Question extends Component {
 
 	render() {
 		if (this.state.currentQuestion) {
+		let _avatar = 'url(https://s3-sa-east-1.amazonaws.com/autoavalia/' + this.state.currentQuestion.Avatar + ')';
+			
 			return (
 				<div className="page page--question">
 					<main className="main">
@@ -90,7 +92,7 @@ export default class Question extends Component {
 							<div className="container">
 								<div className="question">
 									<span className="question__icon">
-										<span className="question__icon__image"></span>
+										<span className="question__icon__image" style={{backgroundImage: _avatar}}></span>
 									</span>
 									<h2 className="question__title">{this.state.currentQuestion.Name}</h2>
 									<p className="question__description">{this.state.currentQuestion.Description}</p>
