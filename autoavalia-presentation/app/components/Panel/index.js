@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import Progress from '../Progress';
+import Card from '../Card';
+import {fetchCluster} from './../../actions/index'
 
 export default class Panel extends Component {
+	constructor(props) {
+		super(props);
+		
+		this.state = {
+			items: []
+		}
+	}
+	
+	
+	componentWillMount() {
+		let _this = this;
+		fetchCluster(1,1, (data) => {
+			_this.setState({items: data });
+		});
+	}
+	
 	render() {
 		return (
 			<div className="page page--panel">
@@ -12,63 +29,16 @@ export default class Panel extends Component {
 					<section className="section section--cards">
 						<div className="container">
 							<div className="cards">
-								<div className="cards__item cards__item--historic">
-									<div className="cards__item__internal">
-										<span className="cards__item__icon"></span>
-										<span className="cards__item__steps">2 de 5</span>
-										<h3 className="cards__item__title">Hístorico do veículo</h3>
-										<p className="cards__item__description">Dados de documentação e uso</p>
-									</div>
-									<Progress totalSteps={5} currentStep={4} />
-								</div>
-								<div className="cards__item cards__item--inside">
-									<div className="cards__item__internal">
-										<span className="cards__item__icon"></span>
-										<span className="cards__item__steps">2 de 5</span>
-										<h3 className="cards__item__title">Interior</h3>
-										<p className="cards__item__description">Dados de documentação e uso</p>
-									</div>
-									<Progress totalSteps={8} currentStep={4} />
-								</div>
-								<div className="cards__item cards__item--funnel">
-									<div className="cards__item__internal">
-										<span className="cards__item__icon"></span>
-										<span className="cards__item__steps">2 de 5</span>
-										<h3 className="cards__item__title">Funilaria</h3>
-										<p className="cards__item__description">Dados de documentação e uso</p>
-									</div>
-									<Progress totalSteps={7} currentStep={4} />
-								</div>
-								<div className="cards__item cards__item--tires">
-									<div className="cards__item__internal">
-										<span className="cards__item__icon"></span>
-										<span className="cards__item__steps">2 de 5</span>
-										<h3 className="cards__item__title">Pneus</h3>
-										<p className="cards__item__description">Dados de documentação e uso</p>
-									</div>
-									<Progress totalSteps={12} currentStep={4} />
-								</div>
-								<div className="cards__item cards__item--eletric">
-									<div className="cards__item__internal">
-										<span className="cards__item__icon"></span>
-										<span className="cards__item__steps">2 de 5</span>
-										<h3 className="cards__item__title">Elétrica</h3>
-										<p className="cards__item__description">Dados de documentação e uso</p>
-									</div>
-									<Progress totalSteps={10} currentStep={4} />
-								</div>
-								<div className="cards__item cards__item--mechanic">
-									<div className="cards__item__internal">
-										<span className="cards__item__icon"></span>
-										<span className="cards__item__steps">2 de 5</span>
-										<h3 className="cards__item__title">Mecânica</h3>
-										<p className="cards__item__description">Dados de documentação e uso</p>
-									</div>
-									<Progress totalSteps={7} currentStep={4} />
-								</div>
+								<Card title={"Histórico do veículo"} description={"Dados de documentação e uso"} cluster={"historic"} filledSteps={2} totalSteps={7} />
+								<Card title={"Interior"} description={"Dados de documentação e uso"} cluster={"inside"} filledSteps={2} totalSteps={8} />
+								<Card title={"Funilaria"} description={"Dados de documentação e uso"} cluster={"funnel"} filledSteps={2} totalSteps={9} />
+								<Card title={"Pneus"} description={"Dados de documentação e uso"} cluster={"tires"} filledSteps={2} totalSteps={14} />
+								<Card title={"Elétrica"} description={"Dados de documentação e uso"} cluster={"eletric"} filledSteps={2} totalSteps={5} />
+								<Card title={"Mecânica"} description={"Dados de documentação e uso"} cluster={"mechanic"} filledSteps={2} totalSteps={6} />
 							</div>
 						</div>
 					</section>
+					<button className="button button--success">Continuar</button>
 				</main>
 				<Footer />
 			</div>
