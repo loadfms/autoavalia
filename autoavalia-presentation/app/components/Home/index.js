@@ -11,6 +11,8 @@ export default class Home extends Component {
 		
 		this.handleCompanyClick = this.handleCompanyClick.bind(this);
 		this.handleMyselfClick = this.handleMyselfClick.bind(this);
+		this.onClickBackButton = this.onClickBackButton.bind(this);
+		
 	}
 
 	handleCompanyClick() {
@@ -20,11 +22,15 @@ export default class Home extends Component {
 	handleMyselfClick() {
 		this.props.history.push('/painel');
 	}
+
+	onClickBackButton() {
+		this.props.history.goBack();
+	}
 	
 	render() {
 		return (
 			<div className="page page--home">
-				<Header />
+				<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
 				<main className="main">
 					<section className="section section--auto-avalia">
 						<div className="container">

@@ -10,8 +10,6 @@ export default class Question extends Component {
 	constructor(props) {
 		super(props);
 
-		console.log(this.props.match.params.id);
-
 		this.state = {
 			currentQuestion: undefined,
 			value: false,
@@ -19,6 +17,8 @@ export default class Question extends Component {
 		}
 
 		this.setValue = this.setValue.bind(this);
+		this.handleMyselfClick = this.handleMyselfClick.bind(this);
+		this.onClickBackButton = this.onClickBackButton.bind(this);
 		this.firePhotoEvent = this.firePhotoEvent.bind(this);
 	}
 
@@ -77,11 +77,19 @@ export default class Question extends Component {
 		});
 	}
 
+	handleMyselfClick() {
+		this.props.history.push('/painel');
+	}
+	
+	onClickBackButton() {
+		this.props.history.goBack();
+	}
+
 	render() {
 		if (this.state.currentQuestion) {
 			return (
 				<div className="page page--question">
-					<Header />
+					<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
 					<main className="main">
 						<Progress filledSteps={0} totalSteps={1} />
 						<input type="file" accept="image/*" capture="camera" onChange={this.firePhotoEvent}></input>

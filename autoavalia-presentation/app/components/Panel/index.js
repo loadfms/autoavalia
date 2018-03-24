@@ -18,6 +18,8 @@ export default class Panel extends Component {
 		}
 
 		this.handleCardClusterClick = this.handleCardClusterClick.bind(this);
+		this.handleMyselfClick = this.handleMyselfClick.bind(this);
+		this.onClickBackButton = this.onClickBackButton.bind(this);
 	}
 
 	componentWillMount() {
@@ -47,11 +49,19 @@ export default class Panel extends Component {
 		this.props.history.push('/questao/' + questionaryId + '/' + id);
 	}
 
+	handleMyselfClick() {
+		this.props.history.push('/painel');
+	}
+	
+	onClickBackButton() {
+		this.props.history.goBack();
+	}
+
 	render() {
 		console.log(this.state.items);
 		return (
 			<div className="page page--panel">
-				<Header />
+				<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
 				<main className="main">
 					<section className="section section--total-progress">
 						<Card title={"Avaliação do veículo"} type={"inside"} cluster={"total-progress"} filledSteps={this.state.totalDone} totalSteps={this.state.totalToDo} progress={true} />

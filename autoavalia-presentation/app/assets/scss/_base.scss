@@ -161,8 +161,15 @@ body {
 	background-color: #fff;
 	display: block;
 	z-index: 2;
+	position: relative;
 	&__back {
-		
+		width: 59px;
+		height: 59px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url($s3_image_path + "icon-arrow-left.svg") no-repeat scroll left center;
+		cursor: pointer;
 	}
 	&__brand {
 		width: 127px;
@@ -178,6 +185,16 @@ body {
 			height: auto;
 			display: block;
 		}
+	}
+	&__menu {
+		width: 59px;
+		height: 59px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: url($s3_image_path + "icon-menu.png") no-repeat scroll right center;
+		cursor: pointer;
+		display: block;
 	}
 }
 /* END HEADER
