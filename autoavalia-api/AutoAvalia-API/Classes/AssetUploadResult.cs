@@ -1,25 +1,21 @@
-﻿using System;
-
-namespace Webmotors.Api.Classes
+﻿namespace Webmotors.Api.Classes
 {
     public class AssetUploadResult
     {
         public bool Success { get; set; }
         public string Message { get; set; }
+        public string BlobName { get; set; }
 
         public AssetUploadResult()
         {
             
         }
 
-        public AssetUploadResult(bool sucess, string message)
+        public AssetUploadResult(bool sucess, string message, string blobName)
         {
             Success = sucess;
             Message = message;
-        }
-
-        public AssetUploadResult(Tuple<bool, string> tuple) : this(tuple.Item1, tuple.Item2)
-        {
+            BlobName = blobName;
         }
     }
 }

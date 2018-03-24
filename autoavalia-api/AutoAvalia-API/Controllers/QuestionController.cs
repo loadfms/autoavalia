@@ -11,11 +11,12 @@ namespace AutoAvalia_API.Controllers
 {
     public class QuestionController : CrudApi<Question, long>
     {
-		[HttpGet]
-		[Route("api/Question/Clusters/{userId}/{advertiseId}")]
-		public List<Cluster> ListCluster(int userId, int advertiseId)
-		{
-			return new List<Cluster>();
-		}
+
+        [HttpGet]
+        [Route("api/Question/{userId}/{advertiseId}/{cluster}")]
+        public List<Question> ListQuestionByCluster(int userId, int advertiseId, string cluster)
+        {
+            return new List<Question>();
+        }
 	}
 }
