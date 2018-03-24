@@ -3,8 +3,24 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
 import brandAutoAvalia from '../../../images/brands/brand-auto-avalia.svg';
+import {withRouter} from 'react-router-dom';
 
 export default class Home extends Component {
+	constructor(props) {
+		super(props);
+		
+		this.handleCompanyClick = this.handleCompanyClick.bind(this);
+		this.handleMyselfClick = this.handleMyselfClick.bind(this);
+	}
+
+	handleCompanyClick() {
+		window.open('http://dekra.com.br/','_blank');
+	}
+
+	handleMyselfClick() {
+		this.props.history.push('/painel');
+	}
+	
 	render() {
 		return (
 			<div className="page page--home">
@@ -30,8 +46,8 @@ export default class Home extends Component {
 						<div className="container">
 							<h2 className="section__title">Como deseja realizar a avaliação?</h2>
 							<div className="buttons">
-								<button className="button button--choose">Uma empresa</button>
-								<button className="button button--choose">Eu mesmo</button>
+								<button className="button button--choose" onClick={this.handleCompanyClick}>Uma empresa</button>
+								<button className="button button--choose" onClick={this.handleMyselfClick}>Eu mesmo</button>
 							</div>
 						</div>
 					</section>
