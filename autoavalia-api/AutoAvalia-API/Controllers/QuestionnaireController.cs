@@ -35,7 +35,7 @@ namespace Webmotors.Api.Controllers
                 .ToList();
             List<Cluster> parsedClusters = listCluster.Select(x => {
                 x.QuestionList = listQuestion.Where(
-                    y => y.IdCluster.Equals(x.Id)
+                    y => y.IdCluster == x.Id
                 ).ToList();
                 x.AnswerList = listAnswer;
                 return x;
