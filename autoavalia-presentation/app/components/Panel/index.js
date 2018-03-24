@@ -3,6 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
 import {fetchCluster} from './../../actions/index';
+import Storage from './../../helpers/storage'
 
 export default class Panel extends Component {
 	constructor(props) {
@@ -18,6 +19,7 @@ export default class Panel extends Component {
 		let _this = this;
 		fetchCluster(1, 1, (response) => {
 			_this.setState({ items: response.data });
+			Storage.setStore(response.data);
 		});
 	}
 
@@ -32,6 +34,7 @@ export default class Panel extends Component {
 					<section className="section section--cards">
 						<div className="container">
 							<div className="cards">
+							<Card title={"Histórico do veículo"} description={"Dados de documentação e uso"} cluster={"historic"} filledSteps={1} totalSteps={1} />
 								{
 									this.state.items && this.state.items.clusterList ?
 										this.state.items.clusterList.map((item) => {

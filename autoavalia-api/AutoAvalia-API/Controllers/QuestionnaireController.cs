@@ -5,6 +5,7 @@ using System.Web.Http;
 using Webmotors.Api.Classes;
 using Webmotors.Shared.Database.NoSql;
 using System.Web.Http.Cors;
+using Webmotors.Shared.Caching;
 
 namespace Webmotors.Api.Controllers
 {
@@ -25,22 +26,22 @@ namespace Webmotors.Api.Controllers
                 UserId = userId
             });
 
-            List<Question> listQuestion = new QuickRepository<Question, long>().ToList();
+            List<Cluster> listCluster = Cached.Load("cached_listCluster",
+                key => new QuickRepository<Cluster, long>().ToList());
+            List<Question> listQuestion = Cached.Load("cached_listQuestion",
+                key => new QuickRepository<Question, long>().ToList());
             List<Answer> listAnswer = new QuickRepository<Answer, long>()
                 .Where(x => x.QuestionnaireId == questionnaire.Id)
                 .ToList();
-            List<Cluster> listCluster = new QuickRepository<Cluster, long>()
-                .AsEnumerable()
-                .Select(x =>
-                {
-                    x.QuestionList = listQuestion.Where(
-                        y => y.IdCluster.Equals(x.Id)
-                    ).ToList();
-                    x.AnswerList = listAnswer;
-                    return x;
-                }).ToList();
+            List<Cluster> parsedClusters = listCluster.Select(x => {
+                x.QuestionList = listQuestion.Where(
+                    y => y.IdCluster.Equals(x.Id)
+                ).ToList();
+                x.AnswerList = listAnswer;
+                return x;
+            }).ToList();
 
-            questionnaire.clusterList = listCluster;
+            questionnaire.clusterList = parsedClusters;
 
             return questionnaire;
         }

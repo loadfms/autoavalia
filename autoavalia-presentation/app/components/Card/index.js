@@ -20,7 +20,7 @@ export default class Card extends Component {
 			<div className={"cards__item cards__item--" + this.state.cluster}>
 				<div className="cards__item__internal">
 					<span className="cards__item__icon"></span>
-					{this.state.type != "inside" ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
+					{this.state.type !== "inside" && this.state.filledSteps !== undefined && this.state.totalSteps !== undefined ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
 					<h3 className="cards__item__title">{this.state.title}</h3>
 					{ this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null }
 					{ this.state.type == "inside" ? <Progress withPercent={true} totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }

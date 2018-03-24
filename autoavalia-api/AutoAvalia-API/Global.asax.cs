@@ -3,6 +3,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Webmotors.Shared.Caching;
 
 namespace Webmotors.Api
 {
@@ -15,6 +16,7 @@ namespace Webmotors.Api
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
+		    CacheContainer.Instance.Initialize();
 		}
 	}
 }
