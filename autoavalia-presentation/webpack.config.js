@@ -49,14 +49,14 @@ const config = {
         exclude: /node_modules/,
         use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              query: {
-                sourceMap: false,
-              },
+          use: [{
+            loader: 'css-loader', options: { url: false }
+          },{
+            loader: 'sass-loader',
+            query: {
+              sourceMap: false,
             },
+          },
           ],
           publicPath: '../'
         })),
