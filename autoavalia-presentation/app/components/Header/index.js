@@ -3,7 +3,6 @@ import brandWebmotors from '../../../images/brands/brand-webmotors-color.svg';
 import {withRouter} from 'react-router-dom';
 
 export default class Header extends Component {
-
 	render() {
 		return (
 			<header className="header">

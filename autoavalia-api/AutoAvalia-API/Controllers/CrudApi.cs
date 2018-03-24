@@ -3,15 +3,16 @@ using System.Linq;
 using System.Web.Http;
 using Webmotors.Shared.Database;
 using Webmotors.Shared.Database.NoSql;
+using System.Web.Http.Cors;
 
 namespace Webmotors.Api.Controllers
 {
-
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public abstract class CrudApi<T> : CrudApi<T, string> where T : IEntity<string>
     {
 
     }
-
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public abstract class CrudApi<T, TKey> : ApiController where T : IEntity<TKey>
     {
         public List<T> Get()

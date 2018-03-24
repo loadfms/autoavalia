@@ -10,7 +10,6 @@ namespace Webmotors.Api.Controllers
     public class AnswerController : CrudApi<Answer>
     {
         [HttpPost]
-        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         [Route("api/answer")]
         public void Answer([FromBody] answerPost _answer)
         {
