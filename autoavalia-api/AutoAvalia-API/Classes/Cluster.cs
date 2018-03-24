@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Webmotors.Api.Classes
 {
@@ -13,6 +14,6 @@ namespace Webmotors.Api.Classes
 	    public int QuestionsAnswered => AnswerList?.Count ?? 0;
 	    public int Questions => QuestionList?.Count ?? 0;
 	    public int Completeness =>
-	        QuestionsAnswered > 0 ? Questions/ QuestionsAnswered : 0;
+	        Questions > 0 ? Convert.ToInt32((QuestionsAnswered/Questions)*100) : 0;
 	}
 }
