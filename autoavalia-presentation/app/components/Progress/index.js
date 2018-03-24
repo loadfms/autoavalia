@@ -5,7 +5,8 @@ export default class Progress extends Component {
 		super(props);
 		this.state = {
 			filledSteps: this.props.filledSteps,
-			totalSteps: this.props.totalSteps
+			totalSteps: this.props.totalSteps,
+			withPercent: this.props.withPercent
 		}
 	}
 	
@@ -15,8 +16,11 @@ export default class Progress extends Component {
 			width: _percent + '%'
 		}
 		return (
-			<div className="progress progress--internal">
-				<span style={_progressStyle} className="progress__bar"></span>
+			<div className="progress progress--inside">
+				<div className="progress__internal">
+					<span style={_progressStyle} className="progress__bar"></span>
+				</div>
+				{this.state.withPercent ? <span className="progress__percent">{_percent + "%"}</span> : null}
 			</div>
 		);
 	}

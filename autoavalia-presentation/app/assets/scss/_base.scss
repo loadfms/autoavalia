@@ -112,6 +112,9 @@ body {
 	&--cards {
 		padding: 16px 0 36px 0;
 	}
+	&--total-progress {
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+	}
 }
 /* END SECTION
 ------------------------------------*/
@@ -148,9 +151,10 @@ body {
 	&__item {
 		position: relative;
 		margin-bottom: 8px;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 		&--total-progress {
 			.cards__item__icon {
-				background-image: url($s3_image_path + "icon-total-progress.png");
+				background-image: url($s3_image_path + "icon-total-progress.svg");
 			}
 		}		
 		&--historic {
@@ -239,8 +243,16 @@ body {
 .progress {
 	width: 100%;
 	height: 4px;
-	background-color: #ECEDF2;
 	position: relative;
+	&__internal {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background-color: #ECEDF2;
+		.section--total-progress & {
+			width: calc(100% - 35px);
+		}
+	}
 	&__bar {
 		width: 0%;
 		height: 100%;
@@ -251,6 +263,13 @@ body {
 		.section--total-progress & {
 			border-radius: 7px;
 		}
+	}
+	&__percent {
+		font-size: 1.1rem;
+		color: #8B8C99;
+		position: absolute;
+		right: 8px;
+		top: -3px;
 	}
 	.section--total-progress & {
 		height: 7px;
