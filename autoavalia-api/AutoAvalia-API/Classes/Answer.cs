@@ -14,6 +14,5 @@ namespace Webmotors.Api.Classes
 		public int PartId { get; set; }
         public string Photo { get; set; }
         public bool Value { get; set; }
-        public DateTime AnsweredAt { get; set; }
     }
 }
