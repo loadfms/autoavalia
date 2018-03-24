@@ -43,11 +43,12 @@ export default class Panel extends Component {
 		});
 	}
 
-	handleCardClusterClick(id) {
-		this.props.history.push('/questao/' + id);
+	handleCardClusterClick(questionaryId, id) {
+		this.props.history.push('/questao/' + questionaryId + '/' + id);
 	}
 
 	render() {
+		console.log(this.state.items);
 		return (
 			<div className="page page--panel">
 				<Header />
@@ -63,7 +64,7 @@ export default class Panel extends Component {
 									this.state.items && this.state.items.ClusterList ?
 										this.state.items.ClusterList.map((item) => {
 											return (
-												<Card key={item.Name} title={item.Name} description={item.Description} cluster={item.Alias} filledSteps={item.QuestionsAnswered} totalSteps={item.Questions} onClick={() => this.handleCardClusterClick(item.Id)} progress={true} />
+												<Card key={item.Name} title={item.Name} description={item.Description} cluster={item.Alias} filledSteps={item.QuestionsAnswered} totalSteps={item.Questions} onClick={() => this.handleCardClusterClick(this.state.items.Id, item.Id)} progress={true} />
 											)
 										})
 										: null
