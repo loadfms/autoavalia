@@ -16,13 +16,22 @@ namespace Webmotors.Api.Controllers
             try
             {
                 var service = new VehicleInformationService();
-                var history = service.GetVehicleInformation("placa");
+                var history = service.GetVehicleInformation("FFP6026");
                 var reportRepository = new QuickRepository<Report>();
                 var answerRepository = new QuickRepository<Answer>();
                 var clusterRepository = new QuickRepository<Cluster>();
                 var questionRepository = new QuickRepository<Question>();
                 var questionnaireRepository = new QuickRepository<Questionnaire>();
                 var questionnaire = questionnaireRepository.First(x => x.Id == questionnaireId);
+
+                if (questionnaire.Finished)
+                {
+                    return new Report {
+                        Error = true,
+                        Description = "Este questionário ja foi finalizado"
+                    };
+                }
+
                 var clusters = clusterRepository.ToList();
                 var questions = questionRepository.ToList();
                 var answers = answerRepository.Where(x => x.QuestionnaireId == questionnaireId).ToList();
