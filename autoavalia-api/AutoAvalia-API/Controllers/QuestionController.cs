@@ -13,9 +13,18 @@ namespace Webmotors.Api.Controllers
         [Route("api/Question/{questionnaireId}/{clusterId}")]
         public Question ListQuestionByCluster(string questionnaireId, string clusterId)
         {
+            var questionRepo = new QuickRepository<Question>();
+            var clusterRepo = new QuickRepository<Cluster>();
+            var answerRepo = new QuickRepository<Answer>();
+
+            var answer = answerRepo.Where(x => x.QuestionnaireId == questionnaireId).ToList();
+            var question = questionRepo.Where(x => x.IdCluster == clusterId).ToList();
 
 
-            return new Question();
+             var filterAdd = question.FirstOrDefault(x => !answer.Any (y => y.QuestionId == x.Id));
+
+
+            return filterAdd;
         }
 	}
 }
