@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Webmotors.Api.Classes;
+﻿using Webmotors.Api.Classes;
 
 namespace Webmotors.Api.Controllers
 {
