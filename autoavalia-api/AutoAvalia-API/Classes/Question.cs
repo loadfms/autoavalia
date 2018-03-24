@@ -18,5 +18,5 @@ namespace Webmotors.Api.Classes
 		[BsonRepresentation(BsonType.ObjectId)] 
 		public string IdCluster { get; set; }
         public decimal Price { get; set; }
-	}
+    }
 }

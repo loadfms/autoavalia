@@ -3,7 +3,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import Progress from '../Progress';
 import Storage from './../../helpers/storage'
-import {fetchQuestion} from './../../actions/index';
+import {fetchQuestion, fetchAnswer} from './../../actions/index';
 
 export default class Question extends Component {
 	constructor(props) {
@@ -12,9 +12,33 @@ export default class Question extends Component {
 		console.log(this.props.match.params.id);
 
 		this.state = {
-			questions: [],
-			currentQuestion: undefined
+			currentQuestion: undefined,
+			value: false,
+			photo: undefined
 		}
+
+		this.setValue = this.setValue.bind(this);
+	}
+
+	setValue(e){
+		this.setState({value: e.target.dataset.value}, () =>{
+			if (this.state.value){
+				this.answerQuestion();
+			}
+		});
+	}
+
+	answerQuestion(){
+		let _model = {
+			questionaryId: this.props.match.params.questionary,
+			questionId: this.props.match.params.id,
+			value: this.state.value,
+			photo: this.state.photo
+		}
+
+		fetchAnswer(_model, (response) =>{
+			console.log(response);
+		});
 	}
 
 
@@ -48,9 +72,9 @@ export default class Question extends Component {
 						<section className="section section--answer">
 							<div className="container">
 								<div className="answer">
-									<div className="answer__buttons">
-										<button className="button button--choose">Sim</button>
-										<button className="button button--choose">Não</button>
+									<div className="buttons">
+										<button className="button button--choose" data-value={true} onClick={this.setValue}>Sim</button>
+										<button className="button button--choose" data-value={false} onClick={this.setValue}>Não</button>
 									</div>
 								</div>
 							</div>

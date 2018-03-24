@@ -16,7 +16,7 @@ namespace Webmotors.Api.Classes
         public ReportState State { get; set; }
         public ReportHistory History { get; set; }
         public VehicleAdvert VehicleAdvert { get; set; }
-
+        public List<ReportCluster> Clusters { get; set; }
 
         [BsonIgnore]
         public bool Error { get; set; }
