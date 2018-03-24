@@ -5,10 +5,10 @@ namespace Webmotors.Shared.Caching
 {
     public sealed class CacheContainer
     {
-        private static readonly Lazy<CacheContainer> lazy =
+        private static readonly Lazy<CacheContainer> Lazy =
             new Lazy<CacheContainer>(() => new CacheContainer());
 
-        public static CacheContainer Instance => lazy.Value;
+        public static CacheContainer Instance => Lazy.Value;
 
         public MemoryCache Cache { get; set; }
 
