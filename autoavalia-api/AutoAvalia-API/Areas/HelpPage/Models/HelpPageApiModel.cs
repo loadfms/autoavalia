@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using AutoAvalia_API.Areas.HelpPage.ModelDescriptions;
+using Webmotors.Api.Areas.HelpPage.ModelDescriptions;
 
-namespace AutoAvalia_API.Areas.HelpPage.Models
+namespace Webmotors.Api.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace AutoAvalia_API.Areas.HelpPage
+namespace Webmotors.Api.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

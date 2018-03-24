@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using AutoAvalia_API.Areas.HelpPage.ModelDescriptions;
+using Webmotors.Api.Areas.HelpPage.ModelDescriptions;
 
-namespace AutoAvalia_API.Areas.HelpPage
+namespace Webmotors.Api.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

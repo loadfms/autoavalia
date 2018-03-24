@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace AutoAvalia_API.Areas.HelpPage
+namespace Webmotors.Api.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {
@@ -16,7 +16,7 @@ namespace AutoAvalia_API.Areas.HelpPage
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "HelpPage_Default",
+                "HelpPage_DefaultRoute",
                 "Help/{action}/{apiId}",
                 new { controller = "Help", action = "Index", apiId = UrlParameter.Optional });
 

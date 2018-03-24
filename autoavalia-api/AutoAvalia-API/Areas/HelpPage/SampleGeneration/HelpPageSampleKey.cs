@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http.Headers;
 
-namespace AutoAvalia_API.Areas.HelpPage
+namespace Webmotors.Api.Areas.HelpPage
 {
     /// <summary>
     /// This is used to identify the place where the sample should be applied.
