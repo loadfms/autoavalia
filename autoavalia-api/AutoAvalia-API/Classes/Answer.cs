@@ -12,5 +12,6 @@ namespace Webmotors.Api.Classes
         public string QuestionnaireId { get; set; }
 		public int PartId { get; set; }
         public string Photo { get; set; }
+        public bool Value { get; set; }
     }
 }
