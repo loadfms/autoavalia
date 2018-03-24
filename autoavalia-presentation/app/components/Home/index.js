@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
+import Card from '../Card';
 import brandAutoAvalia from '../../../images/brands/brand-auto-avalia.svg';
 
 export default class Home extends Component {
@@ -19,18 +20,18 @@ export default class Home extends Component {
 					<section className="section section--cards-auto-avalia">
 						<div className="container">
 							<div className="cards">
-								<div className="cards__item">
-									<h3 className="cards__item__title">Dica 1</h3>
-									<p className="cards__item__description">Dados de documentação e uso Dados de documentação e uso</p>
-								</div>
-								<div className="cards__item">
-									<h3 className="cards__item__title">Dica 1</h3>
-									<p className="cards__item__description">Dados de documentação e uso Dados de documentação e uso</p>
-								</div>
-								<div className="cards__item">
-									<h3 className="cards__item__title">Dica 1</h3>
-									<p className="cards__item__description">Dados de documentação e uso Dados de documentação e uso</p>
-								</div>															
+								<Card title={"Histórico do veículo"} description={"Trazemos para você as informações mais importantes sobre o veículo"} cluster={"historic"} />
+								<Card title={"Avaliação do estado"} description={"Veja como está o estado de cada parte do veículo"} cluster={"valuation"} />
+								<Card title={"Relátorio completo"} description={"Veja como está o estado de cada parte do veículo"} cluster={"report"} />
+							</div>
+						</div>
+					</section>
+					<section className="section section--valuation">
+						<div className="container">
+							<h2 className="section__title">Como deseja realizar a avaliação?</h2>
+							<div className="buttons">
+								<button className="button button--choose">Uma empresa</button>
+								<button className="button button--choose">Eu mesmo</button>
 							</div>
 						</div>
 					</section>
