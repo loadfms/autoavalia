@@ -87,6 +87,7 @@ export default class Question extends Component {
 			return (
 				<div className="page page--question">
 					<main className="main">
+						<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
 						<Progress filledSteps={0} totalSteps={1} />
 						<section className="section section--question">
 							<div className="container">

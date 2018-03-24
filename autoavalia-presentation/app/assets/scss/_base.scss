@@ -39,7 +39,8 @@ body {
 	.section--cards-auto-avalia &,
 	.section--cards &,
 	.section--answer &,
-	.section--valuation & {
+	.section--valuation &,
+	.section--car-report & {
 		width: calc(100% - 16px);
 	}
 
@@ -62,7 +63,7 @@ body {
 	outline: none;
 	position: relative;
 	user-select: none;
-	&--success {
+	&--success, &--disabled {
 		background-color: #50E3C2;
 		&:before {
 			width: 49px;
@@ -74,6 +75,9 @@ body {
 			top: 0;
 			right: 0;
 		}
+	}
+	&--disabled{
+		background-color: #bebebe;		
 	}
 	&--choose {
 		width: calc(50% - 4px);
@@ -126,7 +130,10 @@ body {
 			font-weight: 600;
 			text-align: center;
 			margin-top: 16px;
-		}	
+		}
+		.section--car-data & {
+			margin-bottom: 16px;
+		}
 	}
 	&__description {
 		color: #8b8c99;
@@ -146,7 +153,8 @@ body {
 		}	
 	}
 	&--cards-auto-avalia,
-	&--answer {
+	&--answer,
+	&--car-report {
 		padding: 16px 0 0 0;
 	}
 	&--cards {
@@ -162,6 +170,12 @@ body {
 	}
 	&--valuation {
 		padding-bottom: 30px;
+	}
+	&--car-data {
+		color: #4D4C59;
+		padding-top: 12px;
+		background-color: #fff;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 	}
 }
 /* END SECTION
@@ -258,11 +272,6 @@ body {
 				background-image: url($s3_image_path + "icon-mechanic.png");
 			}				
 		}
-		&--mechanic {
-			.cards__item__icon {
-				background-image: url($s3_image_path + "icon-mechanic.png");
-			}				
-		}
 		&--report {
 			.cards__item__icon {
 				background-image: url($s3_image_path + "icon-report.png");
@@ -272,7 +281,12 @@ body {
 			.cards__item__icon {
 				background-image: url($s3_image_path + "icon-valuation.png");
 			}	
-		}		
+		}
+		&--situation {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-situation.png");
+			}	
+		}	
 		.section--cards-auto-avalia	& {
 			background-color: #fff;
 		}	
@@ -321,6 +335,39 @@ body {
 			font-size: 1.2rem;
 			line-height: normal;
 			color: #8b8c99;
+			&--error {
+				color: #F3123C;
+			}
+		}
+		&__table {
+			width: 100%;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 0 8px;
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			tr {
+				td {
+					height: 40px;
+					font-size: 1.2rem;
+					font-weight: 600;
+					text-align: left;
+					color: #4D4C59;
+					padding: 0 8px;
+					&:nth-child(even) {
+						text-align: right;
+						color: #8B8C99;
+						font-weight: normal;
+					}
+				}
+				&:nth-child(even) {
+					td {
+						background-color: #f5f7f9;
+					}
+				}
+			}
 		}
 	}
 }
@@ -410,4 +457,54 @@ body {
 	}
 }
 /* END QUESTION
+------------------------------------*/
+/* CAR DATA
+------------------------------------*/
+.car-data {
+	&__image {
+		width: 100%;
+		height: auto;
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+	&__content {
+		width: 100%;
+		padding: 15px 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__title {
+		width: 60%;
+		font-size: 1.8rem;
+		font-weight: 600;
+		line-height: 26px;
+		color: #4D4C59;
+		margin-bottom: 3px;
+	}
+	&__price {
+		width: 40%;
+		font-size: 1.6rem;
+		font-weight: 500;
+		line-height: 26px;
+		color: #4D4C59;
+		text-align: right;
+	}
+	&__description {
+		width: 100%;
+		color: #8B8C99;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+	}
+	&__author {
+		width: 100%;
+		color: #4D4C59;
+		font-size: 1.2rem;
+		line-height: 1.6rem;
+		margin-top: 6px;
+	}
+}
+/* END CAR DATA
 ------------------------------------*/

@@ -20,6 +20,7 @@ export default class Panel extends Component {
 		this.handleCardClusterClick = this.handleCardClusterClick.bind(this);
 		this.handleMyselfClick = this.handleMyselfClick.bind(this);
 		this.onClickBackButton = this.onClickBackButton.bind(this);
+		this.handleContinueClick = this.handleContinueClick.bind(this);
 	}
 
 	componentWillMount() {
@@ -39,6 +40,11 @@ export default class Panel extends Component {
 				totalToDo: _totalToDo
 			});
 		});
+	}
+
+	handleContinueClick() {
+		if (this.state.totalDone == this.state.totalToDo)
+			this.props.history.push('/report/' + this.state.items.Id);
 	}
 
 	handleCardClusterClick(questionaryId, id) {
@@ -77,7 +83,7 @@ export default class Panel extends Component {
 							</div>
 						</div>
 					</section>
-					<button className="button button--success">Continuar</button>
+					<button className={"button button--" + (this.state.totalDone == this.state.totalToDo ? 'success' : 'disabled')} onClick={this.handleContinueClick}>Continuar</button>
 				</main>
 				<Footer />
 			</div>
