@@ -12,7 +12,7 @@ export function fetchQuestionnaire(userId, advertiseId, callback) {
 }
 
 export function fetchQuestion(questionaryId, clusterId, callback) {
-  return axios.get(config.api + 'api/Question/' + questionaryId + '/' + clusterId)
+  return axios.get(config.api + 'api/Answer/' + questionaryId + '/' + clusterId)
     .then((response) => {
       callback(response);
     })
