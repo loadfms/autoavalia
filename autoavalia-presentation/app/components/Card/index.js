@@ -17,7 +17,7 @@ export default class Card extends Component {
 	
 	render() {
 		return (
-			<div className={"cards__item cards__item--" + this.state.cluster}>
+			<div className={"cards__item cards__item--" + this.state.cluster} onClick={this.props.onClick}>
 				<div className="cards__item__internal">
 					<span className="cards__item__icon"></span>
 					{this.state.type !== "inside" && this.state.filledSteps !== undefined && this.state.totalSteps !== undefined ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
