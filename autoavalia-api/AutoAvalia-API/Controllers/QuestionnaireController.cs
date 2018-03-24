@@ -19,7 +19,7 @@ namespace Webmotors.Api.Controllers
         {
             var questionnaireRepo = new QuickRepository<Questionnaire>();
             var questionnaire = 
-                questionnaireRepo.FirstOrDefault() ?? 
+                questionnaireRepo.FirstOrDefault(x => x.UserId == userId && x.AdvertiseId == advertiseId) ?? 
                 questionnaireRepo.Add(new Questionnaire
             {
                 AdvertiseId = advertiseId,
