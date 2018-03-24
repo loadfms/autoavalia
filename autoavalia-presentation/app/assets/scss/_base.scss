@@ -77,6 +77,9 @@ body {
 	&--cards-auto-avalia {
 		padding: 16px 0 0 0;
 	}
+	&--cards {
+		padding: 16px 0 0 0;
+	}
 }
 /* END SECTION
 ------------------------------------*/
@@ -111,10 +114,40 @@ body {
 .cards {
 	width: 100%;
 	&__item {
-		height: 89px;
+		min-height: 76px;
 		background-color: #fff;
 		border-radius: 2px;
 		margin-bottom: 8px;
+		padding-left: 72px;
+		position: relative;
+		&:before {
+			width: 72px;
+			height: 100%;
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: no-repeat scroll center center;
+		}
+		&--historic {
+			background-image: url('./../images/icon-historic.png');
+		}
+		&--inside {
+			background-image: url('./../images/icon-inside.png');
+		}
+		&--funnel {
+			background-image: url('./../images/icon-funnel.png');
+		}
+		&--tires {
+			background-image: url('./../images/icon-tires.png');
+		}
+		&--eletric {
+			background-image: url('./../images/icon-eletric.png');
+		}
+		&--mechanic {
+			background-image: url('./../images/icon-mechanic.png');
+		}
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -122,7 +155,7 @@ body {
 			font-size: 1.6rem;
 			color: #4d4c59;
 			font-weight: 600;
-			line-height: normal;
+			line-height: 25px;
 		}
 		&__description {
 			font-size: 1.2rem;
