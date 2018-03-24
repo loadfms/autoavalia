@@ -9,10 +9,10 @@ namespace Webmotors.Api.Controllers
 {
     public class AnswerController : CrudApi<Answer>
     {
-        [HttpGet]
+        [HttpPost]
         [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
-        [Route("api/answer/{questionnaireId}/{questionId}/{value}")]
-        public void Answer(string questionnaireId, string questionId, bool value, string photo)
+        [Route("api/answer/{questionnaireId}/{questionId}/{value}/{photo}")]
+        public void Answer([FromBody] string questionnaireId, string questionId, bool value, string photo)
         {
             var answerRepo = new QuickRepository<Answer>();
             var questionRepo = new QuickRepository<Question>();

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Http;
 using Webmotors.Api.Classes;
+using System.Web.Http.Cors;
 using Webmotors.Shared.Database.NoSql;
 
 namespace Webmotors.Api.Controllers
@@ -10,6 +11,7 @@ namespace Webmotors.Api.Controllers
     {
 
         [HttpGet]
+        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         [Route("api/Question/{questionnaireId}/{clusterId}")]
         public Question ListQuestionByCluster(string questionnaireId, string clusterId)
         {
