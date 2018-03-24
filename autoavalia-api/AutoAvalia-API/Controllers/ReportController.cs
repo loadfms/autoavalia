@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Webmotors.Shared.Database.NoSql;
 using Webmotors.Shared.Services;
@@ -10,7 +9,7 @@ namespace Webmotors.Api.Controllers
 {
     public class ReportController : CrudApi<Report>
     {
-        [HttpPost]
+        [HttpGet]
         [Route("api/report/create/{questionnaireId}")]
         public Report CreateReport(string questionnaireId)
         {
