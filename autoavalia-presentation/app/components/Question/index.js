@@ -29,7 +29,9 @@ export default class Question extends Component {
 
 		fetchPhoto(_data, (response) => {
 			if (response.data && response.data.Success == true){
-				alert(response.data.BlobName);
+				this.setState({photo: response.data.BlobName, value: true}, () =>{
+					this.answerQuestion();
+				});
 			}
 		})
 	}
