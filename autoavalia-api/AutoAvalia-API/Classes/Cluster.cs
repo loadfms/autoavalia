@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Webmotors.Api.Classes
 {
@@ -10,9 +11,9 @@ namespace Webmotors.Api.Classes
 
 
         // Calculated Properties
-        public int QuestionsAnswered => AnswerList?.Count ?? 0;
-        public int Questions => QuestionList?.Count ?? 0;
-        public int Completeness =>
-            QuestionsAnswered > 0 ? Questions / QuestionsAnswered : 0;
-    }
+	    public int QuestionsAnswered => AnswerList?.Count ?? 0;
+	    public int Questions => QuestionList?.Count ?? 0;
+	    public int Completeness =>
+	        QuestionsAnswered > 0 ? Questions/ QuestionsAnswered : 0;
+	}
 }

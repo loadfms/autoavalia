@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import brandAutoAvalia from '../../assets/images/brands/brand-auto-avalia.svg';
+import brandAutoAvalia from '../../../images/brands/brand-auto-avalia.svg';
 
 export default class Home extends Component {
 	render() {
