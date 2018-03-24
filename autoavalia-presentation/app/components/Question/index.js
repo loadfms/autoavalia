@@ -72,7 +72,7 @@ export default class Question extends Component {
 						<section className="section section--answer">
 							<div className="container">
 								<div className="answer">
-									<div className="answer__buttons">
+									<div className="buttons">
 										<button className="button button--choose" data-value={true} onClick={this.setValue}>Sim</button>
 										<button className="button button--choose" data-value={false} onClick={this.setValue}>Não</button>
 									</div>
