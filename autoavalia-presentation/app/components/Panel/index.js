@@ -32,6 +32,7 @@ export default class Panel extends Component {
 					<section className="section section--cards">
 						<div className="container">
 							<div className="cards">
+							<Card title={"Histórico do veículo"} description={"Dados de documentação e uso"} cluster={"historic"} filledSteps={2} totalSteps={7} />
 								{
 									this.state.items && this.state.items.clusterList ?
 										this.state.items.clusterList.map((item) => {
