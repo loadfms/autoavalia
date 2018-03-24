@@ -63,7 +63,7 @@ body {
 	outline: none;
 	position: relative;
 	user-select: none;
-	&--success {
+	&--success, &--disabled {
 		background-color: #50E3C2;
 		&:before {
 			width: 49px;
@@ -75,6 +75,9 @@ body {
 			top: 0;
 			right: 0;
 		}
+	}
+	&--disabled{
+		background-color: #bebebe;		
 	}
 	&--choose {
 		width: calc(50% - 4px);
@@ -432,6 +435,8 @@ body {
 			top: 9px;
 			left: 9px;
 			box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+			background: no-repeat scroll center center;
+			background-size: 120% auto;
 		}
 	}
 	&__title {

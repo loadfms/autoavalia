@@ -4,8 +4,6 @@ export default class Progress extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			filledSteps: this.props.filledSteps,
-			totalSteps: this.props.totalSteps,
 			withPercent: this.props.withPercent
 		}
 	}
@@ -15,8 +13,8 @@ export default class Progress extends Component {
 		let _progressStyle = {
 			width: '0%'
 		};
-		if (this.state.totalSteps > 0 && this.state.filledSteps > 0) {
-			_percent = this.state.filledSteps / this.state.totalSteps * 100;
+		if (this.props.totalSteps > 0 && this.props.filledSteps > 0) {
+			_percent = Math.round(this.props.filledSteps / this.props.totalSteps * 100);
 			_progressStyle = {
 				width: _percent + '%'
 			}

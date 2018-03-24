@@ -6,8 +6,6 @@ export default class Card extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			totalSteps: this.props.totalSteps,
-			filledSteps: this.props.filledSteps,
 			title: this.props.title,
 			description: this.props.description,
 			cluster: this.props.cluster,
@@ -18,13 +16,13 @@ export default class Card extends Component {
 
 	render() {
 		return (
-			<div className={"cards__item cards__item--" + this.state.cluster} onClick={this.props.onClick}>
+			<div className={"cards__item cards__item--" + this.state.cluster} onClick={this.props.filledSteps == this.props.totalSteps ? null : this.props.onClick}>
 				<div className="cards__item__internal">
 					<span className="cards__item__icon"></span>
-					{this.state.type !== "inside" && this.state.filledSteps !== undefined && this.state.totalSteps !== undefined ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
+					{this.state.type !== "inside" && this.props.filledSteps !== undefined && this.props.totalSteps !== undefined ? <span className="cards__item__steps">{this.props.filledSteps} de {this.props.totalSteps}</span> : null}
 					<h3 className="cards__item__title">{this.state.title}</h3>
-					{this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null}
-					{this.state.progress ? (this.state.type == "inside" ? <Progress withPercent={true} totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null) : null}
+					{ this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null }
+					{ this.state.progress ? (this.state.type == "inside" ? <Progress withPercent={true} totalSteps={this.props.totalSteps} filledSteps={this.props.filledSteps} /> : null) : null }
 				</div>
 				<div className="cards__item__table">
 					<table>
@@ -49,8 +47,8 @@ export default class Card extends Component {
 							<td>2 anos</td>
 						</tr>
 					</table>
-				</div>
-				{this.state.progress ? (this.state.type == "outside" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null) : null}
+				</div>			
+				{ this.state.progress ? (this.state.type == "outside" ? <Progress totalSteps={this.props.totalSteps} filledSteps={this.props.filledSteps} /> : null) : null }
 			</div>
 		);
 	}
