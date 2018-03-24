@@ -1,5 +1,6 @@
 /* STRUCTURE
 ------------------------------------*/
+$s3_image_path: "https://s3-sa-east-1.amazonaws.com/autoavalia/";
 * {
 	margin: 0;
 	padding: 0;
@@ -114,13 +115,51 @@ body {
 .cards {
 	width: 100%;
 	&__item {
-		min-height: 76px;
-		background-color: #fff;
-		border-radius: 2px;
-		margin-bottom: 8px;
-		padding-left: 72px;
 		position: relative;
-		&:before {
+		margin-bottom: 8px;
+		&--historic {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-historic.png");
+			}
+		}
+		&--inside {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-inside.png");
+
+			}
+		}
+		&--funnel {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-funnel.png");				
+			}			
+		}
+		&--tires {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-tires.png");				
+			}			
+		}
+		&--eletric {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-eletric.png");
+			}			
+		}
+		&--mechanic {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-mechanic.png");
+			}				
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&__internal {
+			min-height: 76px;
+			background-color: #fff;
+			border-radius: 2px;
+			padding: 20px 0 20px 72px;
+			position: relative;
+			z-index: 1;
+		}
+		&__icon {
 			width: 72px;
 			height: 100%;
 			display: block;
@@ -129,27 +168,14 @@ body {
 			top: 0;
 			left: 0;
 			background: no-repeat scroll center center;
+			z-index: 2;
 		}
-		&--historic {
-			background-image: url('./../images/icon-historic.png');
-		}
-		&--inside {
-			background-image: url('./../images/icon-inside.png');
-		}
-		&--funnel {
-			background-image: url('./../images/icon-funnel.png');
-		}
-		&--tires {
-			background-image: url('./../images/icon-tires.png');
-		}
-		&--eletric {
-			background-image: url('./../images/icon-eletric.png');
-		}
-		&--mechanic {
-			background-image: url('./../images/icon-mechanic.png');
-		}
-		&:last-child {
-			margin-bottom: 0;
+		&__steps {
+			font-size: 1rem;
+			color: #a9a8af;
+			position: absolute;
+			top: 10px;
+			right: 8px;
 		}
 		&__title {
 			font-size: 1.6rem;
@@ -165,4 +191,22 @@ body {
 	}
 }
 /* END CARDS
+------------------------------------*/
+/* PROGRESS
+------------------------------------*/
+.progress {
+	width: 100%;
+	height: 4px;
+	background-color: #ECEDF2;
+	position: relative;
+	&__bar {
+		width: 20%;
+		height: 100%;
+		background-color: #98e7d7;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+}
+/* END PROGRESS
 ------------------------------------*/

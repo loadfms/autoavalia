@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import brandWebmotors from '../../assets/images/brands/brand-webmotors-color.svg';
+import brandWebmotors from '../../../images/brands/brand-webmotors-color.svg';
 
 export default class Header extends Component {
 	render() {
