@@ -2,7 +2,7 @@
 
 namespace Webmotors.Api.Controllers
 {
-    public class AnswerController : CrudApi<Answer, long>
+    public class AnswerController : CrudApi<Answer>
     {
 
     }

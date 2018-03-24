@@ -9,7 +9,7 @@ using Webmotors.Shared.Caching;
 
 namespace Webmotors.Api.Controllers
 {
-    public class QuestionnaireController : CrudApi<Questionnaire, long>
+    public class QuestionnaireController : CrudApi<Questionnaire>
     {
         
         [HttpGet]
@@ -17,7 +17,7 @@ namespace Webmotors.Api.Controllers
         [Route("api/Questionnaire/{userId}/{advertiseId}")]
         public Questionnaire Questionnaire(int userId, int advertiseId)
         {
-            var questionnaireRepo = new QuickRepository<Questionnaire, long>();
+            var questionnaireRepo = new QuickRepository<Questionnaire>();
             var questionnaire = 
                 questionnaireRepo.FirstOrDefault() ?? 
                 questionnaireRepo.Add(new Questionnaire
@@ -27,10 +27,10 @@ namespace Webmotors.Api.Controllers
             });
 
             List<Cluster> listCluster = Cached.Load("cached_listCluster",
-                key => new QuickRepository<Cluster, long>().ToList());
+                key => new QuickRepository<Cluster>().ToList());
             List<Question> listQuestion = Cached.Load("cached_listQuestion",
-                key => new QuickRepository<Question, long>().ToList());
-            List<Answer> listAnswer = new QuickRepository<Answer, long>()
+                key => new QuickRepository<Question>().ToList());
+            List<Answer> listAnswer = new QuickRepository<Answer>()
                 .Where(x => x.QuestionnaireId == questionnaire.Id)
                 .ToList();
             List<Cluster> parsedClusters = listCluster.Select(x => {
@@ -41,7 +41,7 @@ namespace Webmotors.Api.Controllers
                 return x;
             }).ToList();
 
-            questionnaire.clusterList = parsedClusters;
+            questionnaire.ClusterList = parsedClusters;
 
             return questionnaire;
         }

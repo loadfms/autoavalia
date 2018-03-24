@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
-	public class Cluster: IEntity<long>
+	public class Cluster: Entity
 	{
-	    public long Id { get; set; }
 	    public string Name { get; set; }
 	    public string Alias { get; set; }
 	    public string Description { get; set; }

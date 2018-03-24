@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
 	[BsonIgnoreExtraElements]
-	public class VehicleAdvert : IEntity<long>
+	public class VehicleAdvert : Entity
     {
-        public long Id { get; set; }
         public Seller Seller { get; set; }
 		public Prices Prices { get; set; }
         public string LongComment { get; set; }
@@ -17,6 +17,7 @@ namespace Webmotors.Api.Classes
 	[BsonIgnoreExtraElements]
 	public class Seller : IEntity<long>
 	{
+	    [BsonRepresentation(BsonType.Int64)]
 		public long Id { get; set; }
 		public string FirstName { get; set; }
         public string FullName { get; set; }
@@ -87,7 +88,8 @@ namespace Webmotors.Api.Classes
 
     public class Part
     {
-        public int Id { get; set; }
+        [BsonRepresentation(BsonType.Int64)]
+        public long Id { get; set; }
         public string Description { get; set; }
         public decimal Value { get; set; }
     }

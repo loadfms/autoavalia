@@ -1,14 +1,16 @@
 ﻿using System.Collections.Generic;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using Webmotors.Shared.Database;
 
 namespace Webmotors.Api.Classes
 {
-    public class Questionnaire : IEntity<long>
+    public class Questionnaire : Entity
     {
-        public long Id { get; set; }
         public int UserId { get; set; }
         public int AdvertiseId { get; set; }
-        public List<Cluster> clusterList { get; set; }
+        [BsonIgnore]
+        public List<Cluster> ClusterList { get; set; }
         
     }
 }
