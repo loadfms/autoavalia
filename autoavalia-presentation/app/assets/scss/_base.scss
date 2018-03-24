@@ -44,6 +44,24 @@ body {
 }
 /* END STRUCTURE
 ------------------------------------*/
+/* BUTTON
+------------------------------------*/
+.button {
+	width: 100%;
+	height: 49px;
+	display: block;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-align: center;
+	color: #FFFFFF;
+	border: none;
+	&--success {
+		background-color: #50E3C2;
+	}
+}
+/* END BUTTON
+------------------------------------*/
 /* SECTION
 ------------------------------------*/
 .section {

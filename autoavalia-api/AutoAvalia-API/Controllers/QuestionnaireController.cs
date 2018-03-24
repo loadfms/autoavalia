@@ -4,17 +4,15 @@ using System.Linq;
 using System.Web.Http;
 using Webmotors.Api.Classes;
 using Webmotors.Shared.Database.NoSql;
+using System.Web.Http.Cors;
 
 namespace Webmotors.Api.Controllers
 {
     public class QuestionnaireController : CrudApi<Questionnaire, long>
     {
-        public void Start(int userId, int advertiseId)
-        {
-
-        }
-
+        
         [HttpGet]
+        [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
         [Route("api/Questionnaire/{userId}/{advertiseId}")]
         public Questionnaire Questionnaire(int userId, int advertiseId)
         {

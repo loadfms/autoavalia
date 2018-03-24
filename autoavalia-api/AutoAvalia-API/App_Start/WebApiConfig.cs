@@ -9,6 +9,8 @@ namespace Webmotors.Api
             // Web API configuration and services
 		    config.Formatters.Add(new BrowserJsonFormatter());
 
+            config.EnableCors();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
