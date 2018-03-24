@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
-import { fetchCluster } from './../../actions/index'
+import {fetchCluster} from './../../actions/index';
 
 export default class Panel extends Component {
 	constructor(props) {
@@ -26,6 +26,9 @@ export default class Panel extends Component {
 			<div className="page page--panel">
 				<Header />
 				<main className="main">
+					<section className="section section--total-progress">
+						<Card title={"Avaliação do veículo"} type={"internal"} cluster={"total-progress"} />
+					</section>
 					<section className="section section--cards">
 						<div className="container">
 							<div className="cards">
