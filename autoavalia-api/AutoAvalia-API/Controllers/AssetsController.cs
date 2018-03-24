@@ -26,8 +26,11 @@ namespace Webmotors.Api.Controllers
             );
         }
 
-        public AssetUploadResult UploadImage(string bucket)
+		[Route("api/assets/upload")]
+		[HttpPost]
+        public AssetUploadResult UploadImage()
         {
+			string bucket = "autoavalia";
             if (HttpContext.Current.Request.Files.AllKeys.Any())
             {
                 var httpPostedFile = HttpContext.Current.Request.Files["UploadedImage"];
@@ -36,7 +39,7 @@ namespace Webmotors.Api.Controllers
                 {
                     using (var stream = httpPostedFile.InputStream)
                     {
-                        var blobName = $"{Guid.NewGuid().ToString().Substring(8)}-{httpPostedFile.FileName}";
+                        var blobName = $"{Guid.NewGuid().ToString().Substring(0,8)}-{httpPostedFile.FileName}";
                         var response = Client.Upload(stream, bucket, blobName);
                         return new AssetUploadResult(response.Item1, response.Item2, blobName);
                     }

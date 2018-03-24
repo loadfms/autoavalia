@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using Webmotors.Api.Classes;
+using Webmotors.Shared.Database.NoSql;
 
 namespace Webmotors.Api.Controllers
 {
@@ -8,10 +10,12 @@ namespace Webmotors.Api.Controllers
     {
 
         [HttpGet]
-        [Route("api/Question/{userId}/{advertiseId}/{cluster}")]
-        public List<Question> ListQuestionByCluster(int userId, int advertiseId, string cluster)
+        [Route("api/Question/{questionnaireId}/{clusterId}")]
+        public Question ListQuestionByCluster(string questionnaireId, string clusterId)
         {
-            return new List<Question>();
+
+
+            return new Question();
         }
 	}
 }

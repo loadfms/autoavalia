@@ -15,7 +15,7 @@
     <AssemblyName>Webmotors.Api</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -184,6 +184,9 @@
     <Compile Include="Classes\Question.cs" />
     <Compile Include="Classes\AssetUploadResult.cs" />
     <Compile Include="Classes\Questionnaire.cs" />
+    <Compile Include="Classes\Report.cs" />
+    <Compile Include="Classes\ReportHistory.cs" />
+    <Compile Include="Classes\ReportState.cs" />
     <Compile Include="Classes\VehicleAdvert.cs" />
     <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\AssetsController.cs" />
@@ -191,6 +194,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\QuestionnaireController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\VehicleAdvertController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

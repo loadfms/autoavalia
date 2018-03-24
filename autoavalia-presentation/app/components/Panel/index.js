@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Card from '../Card';
-import {fetchCluster} from './../../actions/index';
+import {fetchQuestionnaire} from './../../actions/index';
 import Storage from './../../helpers/storage';
 import {withRouter} from 'react-router-dom';
 
@@ -25,7 +25,7 @@ export default class Panel extends Component {
 		let _totalDone = 0;
 		let _totalToDo = 0;
 
-		fetchCluster(1, 4, (response) => {
+		fetchQuestionnaire(1, 4, (response) => {
 			for (let index = 0; index < response.data.clusterList.length; index++) {
 				const element = response.data.clusterList[index];
 				_totalDone += element.QuestionsAnswered;

@@ -20,7 +20,7 @@ namespace Webmotors.Shared.IO
 
         public static void UploadFromStream(string apiKey, string apiSecret, Stream stream, string bucket, string name)
         {
-            var utility = new TransferUtility(new AmazonS3Client(apiKey, apiSecret));
+            var utility = new TransferUtility(new AmazonS3Client(apiKey, apiSecret, RegionEndpoint.USEast1));
             using (stream)
             {
                 utility.Upload(stream, bucket, name);
