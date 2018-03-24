@@ -56,8 +56,21 @@ body {
 	text-align: center;
 	color: #FFFFFF;
 	border: none;
+	cursor: pointer;
+	outline: none;
+	position: relative;
 	&--success {
 		background-color: #50E3C2;
+		&:before {
+			width: 49px;
+			height: 100%;
+			background: url($s3_image_path + "icon-arrow-right.svg") no-repeat scroll center center;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;;
+		}
 	}
 }
 /* END BUTTON
@@ -97,7 +110,7 @@ body {
 		padding: 16px 0 0 0;
 	}
 	&--cards {
-		padding: 16px 0 0 0;
+		padding: 16px 0 36px 0;
 	}
 }
 /* END SECTION
@@ -135,6 +148,11 @@ body {
 	&__item {
 		position: relative;
 		margin-bottom: 8px;
+		&--total-progress {
+			.cards__item__icon {
+				background-image: url($s3_image_path + "icon-total-progress.png");
+			}
+		}		
 		&--historic {
 			.cards__item__icon {
 				background-image: url($s3_image_path + "icon-historic.png");
@@ -176,6 +194,9 @@ body {
 			padding: 20px 0 20px 72px;
 			position: relative;
 			z-index: 1;
+			.cards__item--total-progress & {
+				padding: 20px 0 20px 82px;
+			}
 		}
 		&__icon {
 			width: 72px;
@@ -187,6 +208,9 @@ body {
 			left: 0;
 			background: no-repeat scroll center center;
 			z-index: 2;
+			.cards__item--total-progress & {
+				width: 82px;
+			}		
 		}
 		&__steps {
 			font-size: 1rem;
@@ -218,12 +242,20 @@ body {
 	background-color: #ECEDF2;
 	position: relative;
 	&__bar {
-		width: 20%;
+		width: 0%;
 		height: 100%;
 		background-color: #98e7d7;
 		position: absolute;
 		left: 0;
 		bottom: 0;
+		.section--total-progress & {
+			border-radius: 7px;
+		}
+	}
+	.section--total-progress & {
+		height: 7px;
+		border-radius: 7px;
+		margin-top: 8px;
 	}
 }
 /* END PROGRESS

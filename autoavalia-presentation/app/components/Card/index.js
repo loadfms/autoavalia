@@ -10,7 +10,8 @@ export default class Card extends Component {
 			filledSteps: this.props.filledSteps,
 			title: this.props.title,
 			description: this.props.description,
-			cluster: this.props.cluster
+			cluster: this.props.cluster,
+			type: this.props.type ? this.props.type : "external"
 		}
 	}
 	
@@ -19,11 +20,12 @@ export default class Card extends Component {
 			<div className={"cards__item cards__item--" + this.state.cluster}>
 				<div className="cards__item__internal">
 					<span className="cards__item__icon"></span>
-					<span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span>
+					{this.state.filledSteps && this.state.totalSteps ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
 					<h3 className="cards__item__title">{this.state.title}</h3>
-					<p className="cards__item__description">{this.state.description}</p>
+					{ this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null }
+					{ this.state.type == "internal" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }
 				</div>
-				<Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} />
+				{ this.state.type == "external" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }
 			</div>
 		);
 	}
