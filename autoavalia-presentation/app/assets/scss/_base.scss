@@ -62,7 +62,7 @@ body {
 	outline: none;
 	position: relative;
 	user-select: none;
-	&--success {
+	&--success, &--disabled {
 		background-color: #50E3C2;
 		&:before {
 			width: 49px;
@@ -74,6 +74,9 @@ body {
 			top: 0;
 			right: 0;
 		}
+	}
+	&--disabled{
+		background-color: #bebebe;		
 	}
 	&--choose {
 		width: calc(50% - 4px);
