@@ -20,7 +20,7 @@ export default class Question extends Component {
 
 	componentWillMount() {
 		let _this = this;
-		fetchQuestion(1, 1, this.props.match.params.id, (response) => {
+		fetchQuestion(this.props.match.params.questionary, this.props.match.params.id, (response) => {
 			_this.setState({
 				currentQuestion: response.data
 			});
