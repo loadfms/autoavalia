@@ -24,13 +24,13 @@ namespace Webmotors.Api.Controllers
                 var questionnaireRepository = new QuickRepository<Questionnaire>();
                 var questionnaire = questionnaireRepository.First(x => x.Id == questionnaireId);
 
-                if (questionnaire.Finished)
-                {
-                    return new Report {
-                        Error = true,
-                        Description = "Este questionário ja foi finalizado"
-                    };
-                }
+                //if (questionnaire.Finished)
+                //{
+                //    return new Report {
+                //        Error = true,
+                //        Description = "Este questionário ja foi finalizado"
+                //    };
+                //}
 
                 var clusters = clusterRepository.ToList();
                 var questions = questionRepository.ToList();
@@ -55,6 +55,8 @@ namespace Webmotors.Api.Controllers
                         return new ReportCluster
                         {
                             Name = x.Name,
+                            Description = x.Description,
+                            Alias = x.Alias,
                             Answers = clusterAnswers.Select(y =>
                             {
                                 var question = clusterQuestions.First(z => y.QuestionId == z.Id);
@@ -68,8 +70,8 @@ namespace Webmotors.Api.Controllers
                     }).ToList()
                 });
 
-                questionnaire.Finished = true;
-                questionnaireRepository.Update(questionnaire);
+                //questionnaire.Finished = true;
+                //questionnaireRepository.Update(questionnaire);
 
                 return report;
             }
