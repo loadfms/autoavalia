@@ -28,8 +28,8 @@ export default class Question extends Component {
 		_data.append('UploadedImage', _file);
 
 		fetchPhoto(_data, (response) => {
-			if (response.data && response.data.Success == true){
-				this.setState({photo: response.data.BlobName, value: true}, () =>{
+			if (response.data && response.data.Success == true) {
+				this.setState({ photo: response.data.BlobName, value: true }, () => {
 					this.answerQuestion();
 				});
 			}
@@ -37,13 +37,8 @@ export default class Question extends Component {
 	}
 
 	setValue(e) {
-		this.setState({ value: e.target.dataset.value, photo: 'teste' }, () => {
-			console.log(this.state.value);
-			if (this.state.value == "yes") {
-				alert('posta a porra da foto!')
-			} else {
-				this.answerQuestion();
-			}
+		this.setState({ value: false }, () => {
+			this.answerQuestion();
 		});
 	}
 
@@ -80,7 +75,7 @@ export default class Question extends Component {
 	handleMyselfClick() {
 		this.props.history.push('/painel');
 	}
-	
+
 	onClickBackButton() {
 		this.props.history.goBack();
 	}
@@ -89,10 +84,8 @@ export default class Question extends Component {
 		if (this.state.currentQuestion) {
 			return (
 				<div className="page page--question">
-					<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
 					<main className="main">
 						<Progress filledSteps={0} totalSteps={1} />
-						<input type="file" accept="image/*" capture="camera" onChange={this.firePhotoEvent}></input>
 						<section className="section section--question">
 							<div className="container">
 								<div className="question">
@@ -108,8 +101,11 @@ export default class Question extends Component {
 							<div className="container">
 								<div className="answer">
 									<div className="buttons">
-										<button className="button button--choose" data-value={"yes"} onClick={this.setValue}>Sim</button>
-										<button className="button button--choose" data-value={"no"} onClick={this.setValue}>Não</button>
+										<button className="button button--choose">
+											Sim
+											<input type="file" accept="image/*" capture="camera" onChange={this.firePhotoEvent} />
+										</button>
+										<button className="button button--choose" onClick={this.setValue}>Não</button>
 									</div>
 								</div>
 							</div>
