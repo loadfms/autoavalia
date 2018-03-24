@@ -16,6 +16,8 @@ namespace Webmotors.Api.Controllers
         {
             try
             {
+                var service = new VehicleInformationService();
+                var history = service.GetVehicleInformation("placa");
                 var reportRepository = new QuickRepository<Report>();
                 var answerRepository = new QuickRepository<Answer>();
                 var clusterRepository = new QuickRepository<Cluster>();
@@ -25,8 +27,6 @@ namespace Webmotors.Api.Controllers
                 var clusters = clusterRepository.ToList();
                 var questions = questionRepository.ToList();
                 var answers = answerRepository.Where(x => x.QuestionnaireId == questionnaireId).ToList();
-                var service = new VehicleInformationService();
-                var history = service.GetVehicleInformation("placa");
                 var report = reportRepository.Add(new Report
                 {
                     QuestionnaireId = questionnaire.Id,
