@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Webmotors.Shared.Database;
 
@@ -9,8 +8,9 @@ namespace Webmotors.Api.Classes
     {
         public int UserId { get; set; }
         public int AdvertiseId { get; set; }
+        public bool Finished { get; set; }
+
         [BsonIgnore]
         public List<Cluster> ClusterList { get; set; }
-        
     }
 }
