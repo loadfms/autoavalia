@@ -54,9 +54,6 @@ export default class Panel extends Component {
 	}
 
 	render() {
-		console.log('**********');
-		console.log(this.state.totalDone);
-		console.log(this.state.totalToDo);
 		return (
 			<div className="page page--panel">
 				<Header onClick={this.handleMyselfClick} onClickBackButton={this.onClickBackButton} />
