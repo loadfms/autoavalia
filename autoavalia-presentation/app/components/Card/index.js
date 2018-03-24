@@ -11,7 +11,7 @@ export default class Card extends Component {
 			title: this.props.title,
 			description: this.props.description,
 			cluster: this.props.cluster,
-			type: this.props.type ? this.props.type : "external"
+			type: this.props.type ? this.props.type : "outside",
 		}
 	}
 	
@@ -20,12 +20,12 @@ export default class Card extends Component {
 			<div className={"cards__item cards__item--" + this.state.cluster}>
 				<div className="cards__item__internal">
 					<span className="cards__item__icon"></span>
-					{this.state.filledSteps && this.state.totalSteps ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
+					{this.state.type !== "inside" && this.state.filledSteps !== undefined && this.state.totalSteps !== undefined ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
 					<h3 className="cards__item__title">{this.state.title}</h3>
 					{ this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null }
-					{ this.state.type == "internal" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }
+					{ this.state.type == "inside" ? <Progress withPercent={true} totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }
 				</div>
-				{ this.state.type == "external" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }
+				{ this.state.type == "outside" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null }
 			</div>
 		);
 	}
