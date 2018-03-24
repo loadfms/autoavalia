@@ -15,7 +15,7 @@ export default class Card extends Component {
 			progress: this.props.progress
 		}
 	}
-	
+
 	render() {
 		return (
 			<div className={"cards__item cards__item--" + this.state.cluster} onClick={this.props.onClick}>
@@ -23,10 +23,34 @@ export default class Card extends Component {
 					<span className="cards__item__icon"></span>
 					{this.state.type !== "inside" && this.state.filledSteps !== undefined && this.state.totalSteps !== undefined ? <span className="cards__item__steps">{this.state.filledSteps} de {this.state.totalSteps}</span> : null}
 					<h3 className="cards__item__title">{this.state.title}</h3>
-					{ this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null }
-					{ this.state.progress ? (this.state.type == "inside" ? <Progress withPercent={true} totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null) : null }
+					{this.state.description ? <p className="cards__item__description">{this.state.description}</p> : null}
+					{this.state.progress ? (this.state.type == "inside" ? <Progress withPercent={true} totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null) : null}
 				</div>
-				{ this.state.progress ? (this.state.type == "outside" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null) : null }
+				<div className="cards__item__table">
+					<table>
+						<tr>
+							<td>Quantidade de donos</td>
+							<td>2 anos</td>
+						</tr>
+						<tr>
+							<td>Quantidade de donos</td>
+							<td>2 anos</td>
+						</tr>
+						<tr>
+							<td>Quantidade de donos</td>
+							<td>2 anos</td>
+						</tr>
+						<tr>
+							<td>Quantidade de donos</td>
+							<td>2 anos</td>
+						</tr>
+						<tr>
+							<td>Quantidade de donos</td>
+							<td>2 anos</td>
+						</tr>
+					</table>
+				</div>
+				{this.state.progress ? (this.state.type == "outside" ? <Progress totalSteps={this.state.totalSteps} filledSteps={this.state.filledSteps} /> : null) : null}
 			</div>
 		);
 	}
